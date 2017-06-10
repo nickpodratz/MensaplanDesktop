@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63899F3F1EEBFF0100709E34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F3E1EEBFF0100709E34 /* AppDelegate.swift */; };
+		63899F411EEBFF0100709E34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F401EEBFF0100709E34 /* ViewController.swift */; };
+		63899F431EEBFF0100709E34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63899F421EEBFF0100709E34 /* Assets.xcassets */; };
+		63899F461EEBFF0100709E34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63899F441EEBFF0100709E34 /* Main.storyboard */; };
+		63899F511EEBFF0100709E34 /* MensaplanDesktopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F501EEBFF0100709E34 /* MensaplanDesktopTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		63899F4D1EEBFF0100709E34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63899F331EEBFF0100709E34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63899F3A1EEBFF0100709E34;
+			remoteInfo = MensaplanDesktop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		63899F3B1EEBFF0100709E34 /* MensaplanDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MensaplanDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63899F3E1EEBFF0100709E34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		63899F401EEBFF0100709E34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		63899F421EEBFF0100709E34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63899F451EEBFF0100709E34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63899F471EEBFF0100709E34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63899F4C1EEBFF0100709E34 /* MensaplanDesktopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MensaplanDesktopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		63899F501EEBFF0100709E34 /* MensaplanDesktopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaplanDesktopTests.swift; sourceTree = "<group>"; };
+		63899F521EEBFF0100709E34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63899F381EEBFF0100709E34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63899F491EEBFF0100709E34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63899F321EEBFF0100709E34 = {
+			isa = PBXGroup;
+			children = (
+				63899F3D1EEBFF0100709E34 /* MensaplanDesktop */,
+				63899F4F1EEBFF0100709E34 /* MensaplanDesktopTests */,
+				63899F3C1EEBFF0100709E34 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		63899F3C1EEBFF0100709E34 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63899F3B1EEBFF0100709E34 /* MensaplanDesktop.app */,
+				63899F4C1EEBFF0100709E34 /* MensaplanDesktopTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63899F3D1EEBFF0100709E34 /* MensaplanDesktop */ = {
+			isa = PBXGroup;
+			children = (
+				63899F3E1EEBFF0100709E34 /* AppDelegate.swift */,
+				63899F401EEBFF0100709E34 /* ViewController.swift */,
+				63899F421EEBFF0100709E34 /* Assets.xcassets */,
+				63899F441EEBFF0100709E34 /* Main.storyboard */,
+				63899F471EEBFF0100709E34 /* Info.plist */,
+			);
+			path = MensaplanDesktop;
+			sourceTree = "<group>";
+		};
+		63899F4F1EEBFF0100709E34 /* MensaplanDesktopTests */ = {
+			isa = PBXGroup;
+			children = (
+				63899F501EEBFF0100709E34 /* MensaplanDesktopTests.swift */,
+				63899F521EEBFF0100709E34 /* Info.plist */,
+			);
+			path = MensaplanDesktopTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63899F3A1EEBFF0100709E34 /* MensaplanDesktop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63899F551EEBFF0100709E34 /* Build configuration list for PBXNativeTarget "MensaplanDesktop" */;
+			buildPhases = (
+				63899F371EEBFF0100709E34 /* Sources */,
+				63899F381EEBFF0100709E34 /* Frameworks */,
+				63899F391EEBFF0100709E34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MensaplanDesktop;
+			productName = MensaplanDesktop;
+			productReference = 63899F3B1EEBFF0100709E34 /* MensaplanDesktop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		63899F4B1EEBFF0100709E34 /* MensaplanDesktopTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63899F581EEBFF0100709E34 /* Build configuration list for PBXNativeTarget "MensaplanDesktopTests" */;
+			buildPhases = (
+				63899F481EEBFF0100709E34 /* Sources */,
+				63899F491EEBFF0100709E34 /* Frameworks */,
+				63899F4A1EEBFF0100709E34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63899F4E1EEBFF0100709E34 /* PBXTargetDependency */,
+			);
+			name = MensaplanDesktopTests;
+			productName = MensaplanDesktopTests;
+			productReference = 63899F4C1EEBFF0100709E34 /* MensaplanDesktopTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63899F331EEBFF0100709E34 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Nick Podratz";
+				TargetAttributes = {
+					63899F3A1EEBFF0100709E34 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = P345AM94MQ;
+						ProvisioningStyle = Automatic;
+					};
+					63899F4B1EEBFF0100709E34 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = P345AM94MQ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 63899F3A1EEBFF0100709E34;
+					};
+				};
+			};
+			buildConfigurationList = 63899F361EEBFF0100709E34 /* Build configuration list for PBXProject "MensaplanDesktop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63899F321EEBFF0100709E34;
+			productRefGroup = 63899F3C1EEBFF0100709E34 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63899F3A1EEBFF0100709E34 /* MensaplanDesktop */,
+				63899F4B1EEBFF0100709E34 /* MensaplanDesktopTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63899F391EEBFF0100709E34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63899F431EEBFF0100709E34 /* Assets.xcassets in Resources */,
+				63899F461EEBFF0100709E34 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63899F4A1EEBFF0100709E34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63899F371EEBFF0100709E34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63899F411EEBFF0100709E34 /* ViewController.swift in Sources */,
+				63899F3F1EEBFF0100709E34 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63899F481EEBFF0100709E34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63899F511EEBFF0100709E34 /* MensaplanDesktopTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63899F4E1EEBFF0100709E34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63899F3A1EEBFF0100709E34 /* MensaplanDesktop */;
+			targetProxy = 63899F4D1EEBFF0100709E34 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		63899F441EEBFF0100709E34 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63899F451EEBFF0100709E34 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		63899F531EEBFF0100709E34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		63899F541EEBFF0100709E34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		63899F561EEBFF0100709E34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = P345AM94MQ;
+				INFOPLIST_FILE = MensaplanDesktop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.nickpodratz.MensaplanDesktop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		63899F571EEBFF0100709E34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = P345AM94MQ;
+				INFOPLIST_FILE = MensaplanDesktop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.nickpodratz.MensaplanDesktop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		63899F591EEBFF0100709E34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = P345AM94MQ;
+				INFOPLIST_FILE = MensaplanDesktopTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.nickpodratz.MensaplanDesktopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MensaplanDesktop.app/Contents/MacOS/MensaplanDesktop";
+			};
+			name = Debug;
+		};
+		63899F5A1EEBFF0100709E34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = P345AM94MQ;
+				INFOPLIST_FILE = MensaplanDesktopTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.nickpodratz.MensaplanDesktopTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MensaplanDesktop.app/Contents/MacOS/MensaplanDesktop";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63899F361EEBFF0100709E34 /* Build configuration list for PBXProject "MensaplanDesktop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63899F531EEBFF0100709E34 /* Debug */,
+				63899F541EEBFF0100709E34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63899F551EEBFF0100709E34 /* Build configuration list for PBXNativeTarget "MensaplanDesktop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63899F561EEBFF0100709E34 /* Debug */,
+				63899F571EEBFF0100709E34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		63899F581EEBFF0100709E34 /* Build configuration list for PBXNativeTarget "MensaplanDesktopTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63899F591EEBFF0100709E34 /* Debug */,
+				63899F5A1EEBFF0100709E34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63899F331EEBFF0100709E34 /* Project object */;
+}
