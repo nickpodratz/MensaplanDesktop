@@ -7,11 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B53E6225A06D7EB9C41FCA4 /* Pods_MensaplanTodayExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFAE466D64E9E190761949D /* Pods_MensaplanTodayExtension.framework */; };
 		63899F3F1EEBFF0100709E34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F3E1EEBFF0100709E34 /* AppDelegate.swift */; };
 		63899F411EEBFF0100709E34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F401EEBFF0100709E34 /* ViewController.swift */; };
 		63899F431EEBFF0100709E34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63899F421EEBFF0100709E34 /* Assets.xcassets */; };
 		63899F461EEBFF0100709E34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63899F441EEBFF0100709E34 /* Main.storyboard */; };
 		63899F511EEBFF0100709E34 /* MensaplanDesktopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F501EEBFF0100709E34 /* MensaplanDesktopTests.swift */; };
+		63899F621EEBFF4700709E34 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63899F611EEBFF4700709E34 /* NotificationCenter.framework */; };
+		63899F671EEBFF4700709E34 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F661EEBFF4700709E34 /* TodayViewController.swift */; };
+		63899F691EEBFF4700709E34 /* ListRowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F681EEBFF4700709E34 /* ListRowViewController.swift */; };
+		63899F6C1EEBFF4700709E34 /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63899F6A1EEBFF4700709E34 /* TodayViewController.xib */; };
+		63899F6F1EEBFF4700709E34 /* ListRowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63899F6D1EEBFF4700709E34 /* ListRowViewController.xib */; };
+		63899F731EEBFF4700709E34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63899F711EEBFF4700709E34 /* InfoPlist.strings */; };
+		63899F761EEBFF4700709E34 /* MensaplanTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 63899F5F1EEBFF4700709E34 /* MensaplanTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		63899F831EEC02B200709E34 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F811EEC02B200709E34 /* File.swift */; };
+		63899F841EEC02B200709E34 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F811EEC02B200709E34 /* File.swift */; };
+		63899F851EEC02B200709E34 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F821EEC02B200709E34 /* Meal.swift */; };
+		63899F861EEC02B200709E34 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F821EEC02B200709E34 /* Meal.swift */; };
+		63899F891EEC02BF00709E34 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F871EEC02BF00709E34 /* BackendService.swift */; };
+		63899F8A1EEC02BF00709E34 /* BackendService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F871EEC02BF00709E34 /* BackendService.swift */; };
+		63899F8B1EEC02BF00709E34 /* SampleResponses in Resources */ = {isa = PBXBuildFile; fileRef = 63899F881EEC02BF00709E34 /* SampleResponses */; };
+		63899F8C1EEC02BF00709E34 /* SampleResponses in Resources */ = {isa = PBXBuildFile; fileRef = 63899F881EEC02BF00709E34 /* SampleResponses */; };
+		63899F911EEC05D800709E34 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F8F1EEC05D800709E34 /* Date+.swift */; };
+		63899F921EEC05D800709E34 /* NSNumber+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F901EEC05D800709E34 /* NSNumber+.swift */; };
+		63899F941EEC05F700709E34 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F8F1EEC05D800709E34 /* Date+.swift */; };
+		63899F951EEC05FA00709E34 /* NSNumber+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F901EEC05D800709E34 /* NSNumber+.swift */; };
+		63899F9B1EEC25E700709E34 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F9A1EEC25E700709E34 /* RoundedView.swift */; };
+		63899F9C1EEC25E700709E34 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F9A1EEC25E700709E34 /* RoundedView.swift */; };
+		63899F9F1EEC271100709E34 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F9E1EEC271100709E34 /* BadgeLabel.swift */; };
+		63899FA01EEC271100709E34 /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F9E1EEC271100709E34 /* BadgeLabel.swift */; };
+		639A786A1EED42FA00F839EE /* PlaceholderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 639A78681EED42FA00F839EE /* PlaceholderViewController.xib */; };
+		639A786C1EED456100F839EE /* PlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639A786B1EED456100F839EE /* PlaceholderViewController.swift */; };
+		98809C07C72D180C21C07EE4 /* Pods_MensaplanDesktop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0075385E19907704592F494F /* Pods_MensaplanDesktop.framework */; };
+		FAE423D6A97A1CB274A065AC /* Pods_MensaplanDesktopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D621B73115824B8649A0995 /* Pods_MensaplanDesktopTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,18 +50,67 @@
 			remoteGlobalIDString = 63899F3A1EEBFF0100709E34;
 			remoteInfo = MensaplanDesktop;
 		};
+		63899F741EEBFF4700709E34 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63899F331EEBFF0100709E34 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63899F5E1EEBFF4700709E34;
+			remoteInfo = MensaplanTodayExtension;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		63899F7A1EEBFF4700709E34 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				63899F761EEBFF4700709E34 /* MensaplanTodayExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0075385E19907704592F494F /* Pods_MensaplanDesktop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MensaplanDesktop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BFAE466D64E9E190761949D /* Pods_MensaplanTodayExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MensaplanTodayExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46D986B64E747CA60691C42B /* Pods-MensaplanTodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MensaplanTodayExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MensaplanTodayExtension/Pods-MensaplanTodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		63899F3B1EEBFF0100709E34 /* MensaplanDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MensaplanDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63899F3E1EEBFF0100709E34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		63899F401EEBFF0100709E34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		63899F401EEBFF0100709E34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Controllers/ViewController.swift; sourceTree = "<group>"; };
 		63899F421EEBFF0100709E34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63899F451EEBFF0100709E34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63899F471EEBFF0100709E34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63899F4C1EEBFF0100709E34 /* MensaplanDesktopTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MensaplanDesktopTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63899F501EEBFF0100709E34 /* MensaplanDesktopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaplanDesktopTests.swift; sourceTree = "<group>"; };
 		63899F521EEBFF0100709E34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63899F5F1EEBFF4700709E34 /* MensaplanTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MensaplanTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		63899F611EEBFF4700709E34 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		63899F651EEBFF4700709E34 /* MensaplanTodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MensaplanTodayExtension.entitlements; sourceTree = "<group>"; };
+		63899F661EEBFF4700709E34 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewController.swift; path = Controllers/TodayViewController.swift; sourceTree = "<group>"; };
+		63899F681EEBFF4700709E34 /* ListRowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListRowViewController.swift; path = Controllers/ListRowViewController.swift; sourceTree = "<group>"; };
+		63899F6B1EEBFF4700709E34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TodayViewController.xib; sourceTree = "<group>"; };
+		63899F6E1EEBFF4700709E34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ListRowViewController.xib; sourceTree = "<group>"; };
+		63899F701EEBFF4700709E34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63899F721EEBFF4700709E34 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		63899F811EEC02B200709E34 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = File.swift; path = Models/File.swift; sourceTree = "<group>"; };
+		63899F821EEC02B200709E34 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Meal.swift; path = Models/Meal.swift; sourceTree = "<group>"; };
+		63899F871EEC02BF00709E34 /* BackendService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackendService.swift; path = Services/BackendService.swift; sourceTree = "<group>"; };
+		63899F881EEC02BF00709E34 /* SampleResponses */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SampleResponses; path = Services/SampleResponses; sourceTree = "<group>"; };
+		63899F8F1EEC05D800709E34 /* Date+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+.swift"; path = "Extensions/Date+.swift"; sourceTree = "<group>"; };
+		63899F901EEC05D800709E34 /* NSNumber+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSNumber+.swift"; path = "Extensions/NSNumber+.swift"; sourceTree = "<group>"; };
+		63899F9A1EEC25E700709E34 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundedView.swift; path = Views/RoundedView.swift; sourceTree = "<group>"; };
+		63899F9E1EEC271100709E34 /* BadgeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BadgeLabel.swift; path = Views/BadgeLabel.swift; sourceTree = "<group>"; };
+		639A78691EED42FA00F839EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PlaceholderViewController.xib; sourceTree = "<group>"; };
+		639A786B1EED456100F839EE /* PlaceholderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderViewController.swift; path = Controllers/PlaceholderViewController.swift; sourceTree = "<group>"; };
+		74BB995FAE27CA369B624780 /* Pods-MensaplanDesktop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MensaplanDesktop.release.xcconfig"; path = "Pods/Target Support Files/Pods-MensaplanDesktop/Pods-MensaplanDesktop.release.xcconfig"; sourceTree = "<group>"; };
+		7D621B73115824B8649A0995 /* Pods_MensaplanDesktopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MensaplanDesktopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B827EFFA81C23877CA2A0404 /* Pods-MensaplanDesktop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MensaplanDesktop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MensaplanDesktop/Pods-MensaplanDesktop.debug.xcconfig"; sourceTree = "<group>"; };
+		C731ECD82049CFD2781FED44 /* Pods-MensaplanDesktopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MensaplanDesktopTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MensaplanDesktopTests/Pods-MensaplanDesktopTests.release.xcconfig"; sourceTree = "<group>"; };
+		D50408948B9FDE2842C6F840 /* Pods-MensaplanTodayExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MensaplanTodayExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-MensaplanTodayExtension/Pods-MensaplanTodayExtension.release.xcconfig"; sourceTree = "<group>"; };
+		EA591B29F1570E758251B679 /* Pods-MensaplanDesktopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MensaplanDesktopTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MensaplanDesktopTests/Pods-MensaplanDesktopTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98809C07C72D180C21C07EE4 /* Pods_MensaplanDesktop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,18 +126,53 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE423D6A97A1CB274A065AC /* Pods_MensaplanDesktopTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63899F5C1EEBFF4700709E34 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63899F621EEBFF4700709E34 /* NotificationCenter.framework in Frameworks */,
+				0B53E6225A06D7EB9C41FCA4 /* Pods_MensaplanTodayExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		630A2F781EF0531D008DA8E7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				63899F441EEBFF0100709E34 /* Main.storyboard */,
+				63899F401EEBFF0100709E34 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		630A2F791EF0549F008DA8E7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				63899F661EEBFF4700709E34 /* TodayViewController.swift */,
+				63899F681EEBFF4700709E34 /* ListRowViewController.swift */,
+				639A786B1EED456100F839EE /* PlaceholderViewController.swift */,
+				63899F6A1EEBFF4700709E34 /* TodayViewController.xib */,
+				63899F6D1EEBFF4700709E34 /* ListRowViewController.xib */,
+				639A78681EED42FA00F839EE /* PlaceholderViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		63899F321EEBFF0100709E34 = {
 			isa = PBXGroup;
 			children = (
 				63899F3D1EEBFF0100709E34 /* MensaplanDesktop */,
 				63899F4F1EEBFF0100709E34 /* MensaplanDesktopTests */,
+				63899F631EEBFF4700709E34 /* MensaplanTodayExtension */,
+				63899F601EEBFF4700709E34 /* Frameworks */,
 				63899F3C1EEBFF0100709E34 /* Products */,
+				D0F979AD62A359095B4B3CBB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +181,7 @@
 			children = (
 				63899F3B1EEBFF0100709E34 /* MensaplanDesktop.app */,
 				63899F4C1EEBFF0100709E34 /* MensaplanDesktopTests.xctest */,
+				63899F5F1EEBFF4700709E34 /* MensaplanTodayExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,9 +190,12 @@
 			isa = PBXGroup;
 			children = (
 				63899F3E1EEBFF0100709E34 /* AppDelegate.swift */,
-				63899F401EEBFF0100709E34 /* ViewController.swift */,
 				63899F421EEBFF0100709E34 /* Assets.xcassets */,
-				63899F441EEBFF0100709E34 /* Main.storyboard */,
+				63899F8E1EEC02D200709E34 /* Models */,
+				63899F9D1EEC25EA00709E34 /* Views */,
+				630A2F781EF0531D008DA8E7 /* Controllers */,
+				63899F8D1EEC02C900709E34 /* Services */,
+				63899F931EEC05E300709E34 /* Extensions */,
 				63899F471EEBFF0100709E34 /* Info.plist */,
 			);
 			path = MensaplanDesktop;
@@ -93,6 +210,85 @@
 			path = MensaplanDesktopTests;
 			sourceTree = "<group>";
 		};
+		63899F601EEBFF4700709E34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63899F611EEBFF4700709E34 /* NotificationCenter.framework */,
+				0075385E19907704592F494F /* Pods_MensaplanDesktop.framework */,
+				7D621B73115824B8649A0995 /* Pods_MensaplanDesktopTests.framework */,
+				3BFAE466D64E9E190761949D /* Pods_MensaplanTodayExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63899F631EEBFF4700709E34 /* MensaplanTodayExtension */ = {
+			isa = PBXGroup;
+			children = (
+				630A2F791EF0549F008DA8E7 /* Controllers */,
+				63899F701EEBFF4700709E34 /* Info.plist */,
+				63899F711EEBFF4700709E34 /* InfoPlist.strings */,
+				63899F641EEBFF4700709E34 /* Supporting Files */,
+			);
+			path = MensaplanTodayExtension;
+			sourceTree = "<group>";
+		};
+		63899F641EEBFF4700709E34 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				63899F651EEBFF4700709E34 /* MensaplanTodayExtension.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63899F8D1EEC02C900709E34 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				63899F871EEC02BF00709E34 /* BackendService.swift */,
+				63899F881EEC02BF00709E34 /* SampleResponses */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		63899F8E1EEC02D200709E34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63899F811EEC02B200709E34 /* File.swift */,
+				63899F821EEC02B200709E34 /* Meal.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		63899F931EEC05E300709E34 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				63899F8F1EEC05D800709E34 /* Date+.swift */,
+				63899F901EEC05D800709E34 /* NSNumber+.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		63899F9D1EEC25EA00709E34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63899F9A1EEC25E700709E34 /* RoundedView.swift */,
+				63899F9E1EEC271100709E34 /* BadgeLabel.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D0F979AD62A359095B4B3CBB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B827EFFA81C23877CA2A0404 /* Pods-MensaplanDesktop.debug.xcconfig */,
+				74BB995FAE27CA369B624780 /* Pods-MensaplanDesktop.release.xcconfig */,
+				EA591B29F1570E758251B679 /* Pods-MensaplanDesktopTests.debug.xcconfig */,
+				C731ECD82049CFD2781FED44 /* Pods-MensaplanDesktopTests.release.xcconfig */,
+				46D986B64E747CA60691C42B /* Pods-MensaplanTodayExtension.debug.xcconfig */,
+				D50408948B9FDE2842C6F840 /* Pods-MensaplanTodayExtension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -100,13 +296,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63899F551EEBFF0100709E34 /* Build configuration list for PBXNativeTarget "MensaplanDesktop" */;
 			buildPhases = (
+				5010D5F9428E22CD241643DB /* [CP] Check Pods Manifest.lock */,
 				63899F371EEBFF0100709E34 /* Sources */,
 				63899F381EEBFF0100709E34 /* Frameworks */,
 				63899F391EEBFF0100709E34 /* Resources */,
+				63899F7A1EEBFF4700709E34 /* Embed App Extensions */,
+				C6FB21D1BBC6890BE87B4495 /* [CP] Embed Pods Frameworks */,
+				23436C6587EDAD46C7B17CF3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				63899F751EEBFF4700709E34 /* PBXTargetDependency */,
 			);
 			name = MensaplanDesktop;
 			productName = MensaplanDesktop;
@@ -117,9 +318,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63899F581EEBFF0100709E34 /* Build configuration list for PBXNativeTarget "MensaplanDesktopTests" */;
 			buildPhases = (
+				1673E3E3FD07252E382F08C5 /* [CP] Check Pods Manifest.lock */,
 				63899F481EEBFF0100709E34 /* Sources */,
 				63899F491EEBFF0100709E34 /* Frameworks */,
 				63899F4A1EEBFF0100709E34 /* Resources */,
+				5057C3B41CD3E3CD8D3AEE6A /* [CP] Embed Pods Frameworks */,
+				BF1ACE01ACA7C7A394A93607 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +334,25 @@
 			productName = MensaplanDesktopTests;
 			productReference = 63899F4C1EEBFF0100709E34 /* MensaplanDesktopTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		63899F5E1EEBFF4700709E34 /* MensaplanTodayExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63899F771EEBFF4700709E34 /* Build configuration list for PBXNativeTarget "MensaplanTodayExtension" */;
+			buildPhases = (
+				61E0C803136A135A04CBEAA4 /* [CP] Check Pods Manifest.lock */,
+				63899F5B1EEBFF4700709E34 /* Sources */,
+				63899F5C1EEBFF4700709E34 /* Frameworks */,
+				63899F5D1EEBFF4700709E34 /* Resources */,
+				79710C7583DFD9824C16CC74 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MensaplanTodayExtension;
+			productName = MensaplanTodayExtension;
+			productReference = 63899F5F1EEBFF4700709E34 /* MensaplanTodayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -152,6 +375,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 63899F3A1EEBFF0100709E34;
 					};
+					63899F5E1EEBFF4700709E34 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = P345AM94MQ;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 63899F361EEBFF0100709E34 /* Build configuration list for PBXProject "MensaplanDesktop" */;
@@ -169,6 +397,7 @@
 			targets = (
 				63899F3A1EEBFF0100709E34 /* MensaplanDesktop */,
 				63899F4B1EEBFF0100709E34 /* MensaplanDesktopTests */,
+				63899F5E1EEBFF4700709E34 /* MensaplanTodayExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -180,6 +409,7 @@
 			files = (
 				63899F431EEBFF0100709E34 /* Assets.xcassets in Resources */,
 				63899F461EEBFF0100709E34 /* Main.storyboard in Resources */,
+				63899F8B1EEC02BF00709E34 /* SampleResponses in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,15 +420,157 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		63899F5D1EEBFF4700709E34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63899F6C1EEBFF4700709E34 /* TodayViewController.xib in Resources */,
+				63899F8C1EEC02BF00709E34 /* SampleResponses in Resources */,
+				63899F731EEBFF4700709E34 /* InfoPlist.strings in Resources */,
+				63899F6F1EEBFF4700709E34 /* ListRowViewController.xib in Resources */,
+				639A786A1EED42FA00F839EE /* PlaceholderViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1673E3E3FD07252E382F08C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		23436C6587EDAD46C7B17CF3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MensaplanDesktop/Pods-MensaplanDesktop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5010D5F9428E22CD241643DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5057C3B41CD3E3CD8D3AEE6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MensaplanDesktopTests/Pods-MensaplanDesktopTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61E0C803136A135A04CBEAA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		79710C7583DFD9824C16CC74 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MensaplanTodayExtension/Pods-MensaplanTodayExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF1ACE01ACA7C7A394A93607 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MensaplanDesktopTests/Pods-MensaplanDesktopTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6FB21D1BBC6890BE87B4495 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MensaplanDesktop/Pods-MensaplanDesktop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63899F371EEBFF0100709E34 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63899F9F1EEC271100709E34 /* BadgeLabel.swift in Sources */,
+				63899F9B1EEC25E700709E34 /* RoundedView.swift in Sources */,
+				63899F851EEC02B200709E34 /* Meal.swift in Sources */,
 				63899F411EEBFF0100709E34 /* ViewController.swift in Sources */,
+				63899F831EEC02B200709E34 /* File.swift in Sources */,
+				63899F911EEC05D800709E34 /* Date+.swift in Sources */,
 				63899F3F1EEBFF0100709E34 /* AppDelegate.swift in Sources */,
+				63899F891EEC02BF00709E34 /* BackendService.swift in Sources */,
+				63899F921EEC05D800709E34 /* NSNumber+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +582,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		63899F5B1EEBFF4700709E34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63899FA01EEC271100709E34 /* BadgeLabel.swift in Sources */,
+				63899F9C1EEC25E700709E34 /* RoundedView.swift in Sources */,
+				63899F861EEC02B200709E34 /* Meal.swift in Sources */,
+				63899F671EEBFF4700709E34 /* TodayViewController.swift in Sources */,
+				63899F841EEC02B200709E34 /* File.swift in Sources */,
+				63899F941EEC05F700709E34 /* Date+.swift in Sources */,
+				63899F691EEBFF4700709E34 /* ListRowViewController.swift in Sources */,
+				63899F8A1EEC02BF00709E34 /* BackendService.swift in Sources */,
+				639A786C1EED456100F839EE /* PlaceholderViewController.swift in Sources */,
+				63899F951EEC05FA00709E34 /* NSNumber+.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -217,6 +606,11 @@
 			isa = PBXTargetDependency;
 			target = 63899F3A1EEBFF0100709E34 /* MensaplanDesktop */;
 			targetProxy = 63899F4D1EEBFF0100709E34 /* PBXContainerItemProxy */;
+		};
+		63899F751EEBFF4700709E34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63899F5E1EEBFF4700709E34 /* MensaplanTodayExtension */;
+			targetProxy = 63899F741EEBFF4700709E34 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -227,6 +621,38 @@
 				63899F451EEBFF0100709E34 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		63899F6A1EEBFF4700709E34 /* TodayViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63899F6B1EEBFF4700709E34 /* Base */,
+			);
+			name = TodayViewController.xib;
+			sourceTree = "<group>";
+		};
+		63899F6D1EEBFF4700709E34 /* ListRowViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63899F6E1EEBFF4700709E34 /* Base */,
+			);
+			name = ListRowViewController.xib;
+			sourceTree = "<group>";
+		};
+		63899F711EEBFF4700709E34 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63899F721EEBFF4700709E34 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		639A78681EED42FA00F839EE /* PlaceholderViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				639A78691EED42FA00F839EE /* Base */,
+			);
+			name = PlaceholderViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -326,7 +752,9 @@
 		};
 		63899F561EEBFF0100709E34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B827EFFA81C23877CA2A0404 /* Pods-MensaplanDesktop.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = P345AM94MQ;
@@ -340,7 +768,9 @@
 		};
 		63899F571EEBFF0100709E34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74BB995FAE27CA369B624780 /* Pods-MensaplanDesktop.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = P345AM94MQ;
@@ -354,6 +784,7 @@
 		};
 		63899F591EEBFF0100709E34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA591B29F1570E758251B679 /* Pods-MensaplanDesktopTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -370,6 +801,7 @@
 		};
 		63899F5A1EEBFF0100709E34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C731ECD82049CFD2781FED44 /* Pods-MensaplanDesktopTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -381,6 +813,42 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MensaplanDesktop.app/Contents/MacOS/MensaplanDesktop";
+			};
+			name = Release;
+		};
+		63899F781EEBFF4700709E34 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46D986B64E747CA60691C42B /* Pods-MensaplanTodayExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MensaplanTodayExtension/MensaplanTodayExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = MensaplanTodayExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.nickpodratz.MensaplanDesktop.MensaplanTodayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		63899F791EEBFF4700709E34 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D50408948B9FDE2842C6F840 /* Pods-MensaplanTodayExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MensaplanTodayExtension/MensaplanTodayExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = MensaplanTodayExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = de.nickpodratz.MensaplanDesktop.MensaplanTodayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -403,6 +871,7 @@
 				63899F571EEBFF0100709E34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		63899F581EEBFF0100709E34 /* Build configuration list for PBXNativeTarget "MensaplanDesktopTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +880,16 @@
 				63899F5A1EEBFF0100709E34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63899F771EEBFF4700709E34 /* Build configuration list for PBXNativeTarget "MensaplanTodayExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63899F781EEBFF4700709E34 /* Debug */,
+				63899F791EEBFF4700709E34 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
