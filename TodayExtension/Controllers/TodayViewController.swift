@@ -12,7 +12,7 @@ import Moya
 
 class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListViewDelegate {
 
-    let provider = MoyaProvider<BackendService>()
+    var provider: MoyaProvider<BackendService>!
     
     @IBOutlet var listViewController: NCWidgetListViewController!
     
@@ -24,6 +24,11 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        #if DEBUG
+            provider = MoyaProvider<BackendService>(stubClosure: MoyaProvider.immediatelyStub)
+        #else
+            provider = MoyaProvider<BackendService>()
+        #endif
     }
     
     override func viewWillAppear() {
@@ -69,10 +74,14 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
                     return
                 }
                 let mealsWithDates = Meal.array(fromResponse: response).filter{$0.date != nil}
-//                let nextMealDay = mealsWithDates.reduce(mealsWithDates.first?.date, { (minDate, meal) in return min(minDate!, meal.date!) })
-//                let mealsOfNextMealDay = mealsWithDates.filter{ $0.date == nextMealDay }
-                let mealsOfToday = mealsWithDates.filter{ return $0.isToday }
-                self.listViewController.contents = !mealsOfToday.isEmpty ? mealsOfToday : ["👨🏻‍🍳  Keine Enträge für heute."]
+                let mealsOfSigleDay: [Meal]
+                #if DEBUG // Instead of today's menu, the meals of the nearest day from now from the sample response are shown
+                    let nextMealDay = mealsWithDates.reduce(mealsWithDates.first?.date, { (minDate, meal) in return min(minDate!, meal.date!) })
+                    mealsOfSigleDay = mealsWithDates.filter{ $0.date == nextMealDay }
+                #else
+                    mealsOfSigleDay = mealsWithDates.filter{ $0.isToday }
+                #endif
+                self.listViewController.contents = !mealsOfSigleDay.isEmpty ? mealsOfSigleDay : ["👨🏻‍🍳  Keine Enträge für heute."]
                 completionHandler?(.newData)
 
             case .failure(let error):
