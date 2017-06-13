@@ -167,9 +167,9 @@
 		63899F321EEBFF0100709E34 = {
 			isa = PBXGroup;
 			children = (
-				63899F3D1EEBFF0100709E34 /* MensaplanDesktop */,
-				63899F4F1EEBFF0100709E34 /* MensaplanDesktopTests */,
-				63899F631EEBFF4700709E34 /* MensaplanTodayExtension */,
+				63899F3D1EEBFF0100709E34 /* Sources */,
+				63899F4F1EEBFF0100709E34 /* Tests */,
+				63899F631EEBFF4700709E34 /* Today Extension */,
 				63899F601EEBFF4700709E34 /* Frameworks */,
 				63899F3C1EEBFF0100709E34 /* Products */,
 				D0F979AD62A359095B4B3CBB /* Pods */,
@@ -186,7 +186,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		63899F3D1EEBFF0100709E34 /* MensaplanDesktop */ = {
+		63899F3D1EEBFF0100709E34 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				63899F3E1EEBFF0100709E34 /* AppDelegate.swift */,
@@ -198,16 +198,16 @@
 				63899F931EEC05E300709E34 /* Extensions */,
 				63899F471EEBFF0100709E34 /* Info.plist */,
 			);
-			path = MensaplanDesktop;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		63899F4F1EEBFF0100709E34 /* MensaplanDesktopTests */ = {
+		63899F4F1EEBFF0100709E34 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				63899F501EEBFF0100709E34 /* MensaplanDesktopTests.swift */,
 				63899F521EEBFF0100709E34 /* Info.plist */,
 			);
-			path = MensaplanDesktopTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		63899F601EEBFF4700709E34 /* Frameworks */ = {
@@ -221,7 +221,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		63899F631EEBFF4700709E34 /* MensaplanTodayExtension */ = {
+		63899F631EEBFF4700709E34 /* Today Extension */ = {
 			isa = PBXGroup;
 			children = (
 				630A2F791EF0549F008DA8E7 /* Controllers */,
@@ -229,7 +229,8 @@
 				63899F711EEBFF4700709E34 /* InfoPlist.strings */,
 				63899F641EEBFF4700709E34 /* Supporting Files */,
 			);
-			path = MensaplanTodayExtension;
+			name = "Today Extension";
+			path = TodayExtension;
 			sourceTree = "<group>";
 		};
 		63899F641EEBFF4700709E34 /* Supporting Files */ = {
@@ -756,12 +757,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = P345AM94MQ;
-				INFOPLIST_FILE = MensaplanDesktop/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.nickpodratz.MensaplanDesktop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -772,12 +775,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = P345AM94MQ;
-				INFOPLIST_FILE = MensaplanDesktop/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.nickpodratz.MensaplanDesktop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -820,11 +825,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 46D986B64E747CA60691C42B /* Pods-MensaplanTodayExtension.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = MensaplanTodayExtension/MensaplanTodayExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/MensaplanTodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = MensaplanTodayExtension/Info.plist;
+				DEVELOPMENT_TEAM = P345AM94MQ;
+				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.nickpodratz.MensaplanDesktop.MensaplanTodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -838,11 +843,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D50408948B9FDE2842C6F840 /* Pods-MensaplanTodayExtension.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = MensaplanTodayExtension/MensaplanTodayExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/MensaplanTodayExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = MensaplanTodayExtension/Info.plist;
+				DEVELOPMENT_TEAM = P345AM94MQ;
+				INFOPLIST_FILE = "$(SRCROOT)/TodayExtension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.nickpodratz.MensaplanDesktop.MensaplanTodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
