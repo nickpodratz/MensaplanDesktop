@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="TodayViewController" customModule="MensaplanTodayExtension" customModuleProvider="target">
             <connections>
                 <outlet property="listViewController" destination="vLu-t9-fwO" id="cso-Rh-DC1"/>
+                <outlet property="progressIndicator" destination="PgM-oh-9DG" id="KcH-FI-zEk"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -16,6 +17,15 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView simulatedAppContext="notificationCenter" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
             <rect key="frame" x="0.0" y="0.0" width="320" height="288"/>
+            <subviews>
+                <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="PgM-oh-9DG">
+                    <rect key="frame" x="152" y="136" width="16" height="16"/>
+                </progressIndicator>
+            </subviews>
+            <constraints>
+                <constraint firstItem="PgM-oh-9DG" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="ibA-dG-exj"/>
+                <constraint firstItem="PgM-oh-9DG" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="t4Z-dX-lde"/>
+            </constraints>
         </customView>
         <viewController title="Heute" id="vLu-t9-fwO" customClass="NCWidgetListViewController">
             <connections>

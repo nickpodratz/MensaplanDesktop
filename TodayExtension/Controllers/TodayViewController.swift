@@ -11,11 +11,12 @@ import NotificationCenter
 import Moya
 
 class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListViewDelegate {
-
-    var provider: MoyaProvider<BackendService>!
     
     @IBOutlet var listViewController: NCWidgetListViewController!
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
     
+    var provider: MoyaProvider<BackendService>!
+
     // MARK: - NSViewController
     
     override var nibName: String? {
@@ -25,7 +26,7 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
     override func viewDidLoad() {
         super.viewDidLoad()
         #if DEBUG
-            provider = MoyaProvider<BackendService>(stubClosure: MoyaProvider.immediatelyStub)
+            provider = MoyaProvider<BackendService>(stubClosure: MoyaProvider.delayedStub(1))
         #else
             provider = MoyaProvider<BackendService>()
         #endif
@@ -65,6 +66,9 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
     }
     
     func updateWidgetContents(completionHandler: ((NCUpdateResult) -> Void)? = nil) {
+        listViewController.contents = [""]
+        progressIndicator.startAnimation(self)
+
         provider.request(.getMeals) { response in
             switch response {
             case .success(let response):
@@ -83,11 +87,13 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
                 #endif
                 self.listViewController.contents = !mealsOfSigleDay.isEmpty ? mealsOfSigleDay : ["👨🏻‍🍳  Keine Enträge für heute."]
                 completionHandler?(.newData)
+                self.progressIndicator.stopAnimation(self)
 
             case .failure(let error):
                 print(error.localizedDescription)
                 self.listViewController.contents = ["⁉️  Ein Fehler ist aufgetreten."]
                 completionHandler?(.failed)
+                self.progressIndicator.stopAnimation(self)
             }
         }
     }
