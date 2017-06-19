@@ -9,12 +9,6 @@
 import Cocoa
 
 class ListRowViewController: NSViewController {
-
-    @IBOutlet weak var titleTextField: NSTextField!
-    @IBOutlet weak var categoryTextField: NSTextField!
-    @IBOutlet weak var priceTextField: NSTextField!
-    @IBOutlet weak var priceTextFieldUpConstraint: NSLayoutConstraint!
-    @IBOutlet weak var priceTextFieldHeightConstraint: NSLayoutConstraint!
     
     override var representedObject: Any? {
         didSet {
@@ -35,14 +29,15 @@ class ListRowViewController: NSViewController {
     
     func setup() {
         guard let meal = self.representedObject as? Meal else { return }
+        guard let view = self.view as? MealCell else { return }
         
-        titleTextField.stringValue = meal.title
-        categoryTextField.stringValue = meal.locationCategoryString
+        view.titleTextField.stringValue = meal.title
+        view.categoryTextField.stringValue = meal.locationCategoryString
         if let priceString = meal.priceString {
-            priceTextField.stringValue = priceString
+            view.priceTextField.stringValue = priceString
         } else {
-            priceTextFieldUpConstraint.constant = 0
-            priceTextFieldHeightConstraint.constant = 0
+            view.priceTextFieldUpConstraint.constant = 0
+            view.priceTextFieldHeightConstraint.constant = 0
         }
     }
     
