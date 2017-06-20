@@ -21,24 +21,19 @@ class ListRowViewController: NSViewController {
     override var nibName: String? {
         return "ListRowViewController"
     }
-
-    override func loadView() {
-        super.loadView()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setup()
     }
-    
+
     func setup() {
         guard let meal = self.representedObject as? Meal else { return }
         guard let view = self.view as? MealCell else { return }
         
         view.titleTextField.stringValue = meal.title
         view.categoryTextField.stringValue = meal.locationCategoryString
-        if let priceString = meal.priceString {
-            view.priceTextField.stringValue = priceString
-        } else {
-            view.priceTextFieldUpConstraint.constant = 0
-            view.priceTextFieldHeightConstraint.constant = 0
-        }
+        view.priceTextField.stringValue = meal.priceString ?? ""
     }
     
     

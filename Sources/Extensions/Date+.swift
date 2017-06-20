@@ -10,6 +10,15 @@ import Foundation
 
 extension Date {
     
+    var isToday: Bool {
+        return Calendar.current.isDate(self, inSameDayAs: Date())
+    }
+    
+    var isTomorrow: Bool {
+        guard let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date()) else { return false }
+        return Calendar.current.isDate(self, inSameDayAs: tomorrow)
+    }
+
     var germanDateFormatted: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"

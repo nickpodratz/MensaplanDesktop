@@ -34,12 +34,7 @@ class Meal: NSObject {
 // MARK: - Convenience Accessors
 
 extension Meal {
-    
-    var isToday: Bool {
-        guard let date = date else { return false }
-        return Calendar.current.isDate(date, inSameDayAs: Date())
-    }
-    
+        
     var priceString: String? {
         guard let price = price else { return nil }
         let numberFormatter = NumberFormatter()

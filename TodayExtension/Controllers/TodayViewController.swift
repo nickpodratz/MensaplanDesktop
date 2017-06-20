@@ -15,6 +15,7 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
     @IBOutlet var listViewController: NCWidgetListViewController!
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
     
+    var mealMenu: Menu?
     var provider: MoyaProvider<BackendService>!
 
     // MARK: - NSViewController
@@ -34,13 +35,16 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
     
     override func viewWillAppear() {
         listViewController.delegate = self
-        updateWidgetContents()
+        widgetPerformUpdate() {_ in }
     }
     
     // MARK: - NCWidgetProviding
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        updateWidgetContents(completionHandler: completionHandler)
+        updateWidgetContents() { result in
+            completionHandler(result)
+            self.updateView(result)
+        }
     }
     
     func widgetMarginInsets(forProposedMarginInsets defaultMarginInset: EdgeInsets) -> EdgeInsets {
@@ -70,34 +74,43 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
         progressIndicator.startAnimation(self)
 
         provider.request(.getMeals) { response in
+            defer { self.progressIndicator.stopAnimation(self) }
+            
             switch response {
+            case .failure(let error):
+                print(error.localizedDescription)
+                completionHandler?(.failed)
             case .success(let response):
                 guard !response.data.isEmpty else {
-                    self.listViewController.contents = ["∅  Keine Einträge vorhanden."]
                     completionHandler?(.noData)
                     return
                 }
-                let mealsWithDates = Meal.array(fromResponse: response).filter{$0.date != nil}
-                let mealsOfSigleDay: [Meal]
-                #if DEBUG // Instead of today's menu, the meals of the nearest day from now from the sample response are shown
-                    let nextMealDay = mealsWithDates.reduce(mealsWithDates.first?.date, { (minDate, meal) in return min(minDate!, meal.date!) })
-                    mealsOfSigleDay = mealsWithDates.filter{ $0.date == nextMealDay }
-                #else
-                    mealsOfSigleDay = mealsWithDates.filter{ $0.isToday }
-                #endif
-                self.listViewController.contents = !mealsOfSigleDay.isEmpty ? mealsOfSigleDay : ["👨🏻‍🍳  Keine Enträge für heute."]
+                guard let menu = Menu(fromResponse: response) else {
+                    completionHandler?(.failed)
+                    return
+                }
+                self.mealMenu = menu
                 completionHandler?(.newData)
-                self.progressIndicator.stopAnimation(self)
-
-            case .failure(let error):
-                print(error.localizedDescription)
-                self.listViewController.contents = ["⁉️  Ein Fehler ist aufgetreten."]
-                completionHandler?(.failed)
-                self.progressIndicator.stopAnimation(self)
             }
         }
     }
     
+    func updateView(_ result: NCUpdateResult) {
+        listViewController.contents = {
+            switch result {
+            case .failed: return ["⁉️  Ein Fehler ist aufgetreten."]
+            case .noData: return ["∅  Keine Einträge vorhanden."]
+            case .newData:
+                guard let mealMenu = mealMenu else {
+                    return ["⁉️  Ein Fehler ist aufgetreten."]
+                }
+                guard !mealMenu.today.isEmpty else {
+                    return ["👨🏻‍🍳  Keine Enträge für heute."]
+                }
+                return mealMenu.today
+            }
+        }()
+    }
 
 }
 
