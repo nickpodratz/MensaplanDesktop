@@ -14,20 +14,30 @@ public class EventMonitor {
     private let mask: NSEventMask
     private let handler: (NSEvent?) -> ()
     
-    public init(mask: NSEventMask, handler: @escaping (NSEvent?) -> ()) {
+    var isEnabled: Bool {
+        willSet {
+            newValue ? enable() : disable()
+        }
+    }
+
+    init(mask: NSEventMask, handler: @escaping (NSEvent?) -> ()) {
         self.mask = mask
         self.handler = handler
+        isEnabled = true
     }
     
     deinit {
-        stop()
+        isEnabled = false
     }
     
-    public func start() {
+    
+    // MARK: Helpers
+    
+    private func enable() {
         monitor = NSEvent.addGlobalMonitorForEvents(matching: mask, handler: handler) as AnyObject
     }
     
-    public func stop() {
+    private func disable() {
         if monitor != nil {
             NSEvent.removeMonitor(monitor!)
             monitor = nil

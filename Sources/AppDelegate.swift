@@ -19,23 +19,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         setupPopover()
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
-
     
-    // MARK: Popover
+    // MARK: - Popover
     
     func showPopover(sender: AnyObject?) {
         if let button = statusItem.button {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
-            eventMonitor?.start()
+            eventMonitor?.isEnabled = true
         }
     }
 
     func closePopover(sender: AnyObject?) {
         popover.performClose(sender)
-        eventMonitor?.stop()
+        eventMonitor?.isEnabled = false
     }
     
     @objc func togglePopover(sender: AnyObject?) {
