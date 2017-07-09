@@ -10,19 +10,20 @@ import Cocoa
 import NotificationCenter
 import Moya
 
-
-private let cellIdentifier = "MealCell"
-
-class PopoverViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
-
+class PopoverViewController: FLOPageViewController {
+    
+    @IBOutlet weak var leftNavigationButton: NSButton!
+    @IBOutlet weak var rightNavigationButton: NSButton!
     @IBOutlet weak var titleLabel: NSTextField!
-    @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
     @IBOutlet weak var statusLabel: NSTextField!
     @IBOutlet weak var clickGestureRecognizer: NSClickGestureRecognizer!
     
     var mealMenu: Menu?
     var provider: MoyaProvider<BackendService>!
+    
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,85 +32,39 @@ class PopoverViewController: NSViewController, NSTableViewDataSource, NSTableVie
         #else
             provider = MoyaProvider<BackendService>()
         #endif
-        tableView.delegate = self
-        tableView.dataSource = self
-        statusLabel.stringValue = ""
-        updateContents()
+        reloadData()
     }
     
-    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        guard let menu = mealMenu else { return nil }
-        if let cell = tableView.make(withIdentifier: cellIdentifier, owner: nil) as? MealCell {
-            cell.categoryTextField.stringValue = menu.today[row].locationCategoryString
-            cell.titleTextField.stringValue = menu.today[row].title
-            cell.priceTextField.stringValue = menu.today[row].priceString ?? ""
-            cell.layout()
-            return cell
+    
+    // MARK: - Actions
+    
+    @IBAction func handleViewClicked(_ sender: NSClickGestureRecognizer) {
+        reloadData()
+    }
+    
+    @IBAction func handleNavigationButtonClicked(_ sender: NSButton) {
+        switch sender.tag {
+        case -1: pageController.navigateBack(nil)
+        case +1: pageController.navigateForward(nil)
+        default: break
         }
-        return nil
     }
     
-    func tableViewColumnDidResize() {
-        let allIndices = IndexSet(integersIn: 0..<tableView.numberOfRows)
-        tableView.noteHeightOfRows(withIndexesChanged: allIndices)
-    }
     
-    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        let cellView = tableView.make(withIdentifier: cellIdentifier, owner: nil) as! MealCell
-        
-        cellView.bounds.size.height = tableView.bounds.size.height
-        cellView.needsLayout = true
-        cellView.updateConstraints()
-        cellView.layoutSubtreeIfNeeded()
-        
-        let height = cellView.fittingSize.height
-
-        // Make sure at least the table view height is returned
-        return height > tableView.rowHeight ? height : tableView.rowHeight
-    }
+    // MARK: - Networking
     
-    func numberOfRows(in tableView: NSTableView) -> Int {
-        return mealMenu?.today.count ?? 0
-    }
-    
-    @IBAction func clickedView(_ sender: NSClickGestureRecognizer) {
-        updateContents()
-    }
-    
-    func updateContents(completionHandler: ((NCUpdateResult) -> Void)? = nil) {
-        mealMenu = nil
-        tableView.reloadData()
+    func reloadData() {
         progressIndicator.startAnimation(self)
+        updateStatusLabel(contentState: nil)
         clickGestureRecognizer.isEnabled = false
-        updateStatusLabel(nil)
 
         fetchMenu() { result in
-            defer { completionHandler?(result) }
             self.progressIndicator.stopAnimation(self)
-            switch result {
-            case .failed:
-                self.updateStatusLabel("⁉️  Ein Fehler ist aufgetreten.")
+            self.updateStatusLabel(contentState: result)
+            self.updateContentView()
+            if result != .newData { // enable reload only if data is invalid
                 self.clickGestureRecognizer.isEnabled = true
-            case .noData:
-                self.updateStatusLabel("∅  Keine Einträge vorhanden.")
-                self.clickGestureRecognizer.isEnabled = true
-            case .newData where self.mealMenu != nil && self.mealMenu!.today.isEmpty:
-                self.updateStatusLabel("👨🏻‍🍳  Keine Enträge für heute.")
-                self.clickGestureRecognizer.isEnabled = true
-            case .newData:
-                if let meal = self.mealMenu?.today.first, let date = meal.date {
-                    if Calendar.current.isDateInToday(date) {
-                        self.titleLabel.stringValue = "Heute"
-                    } else if Calendar.current.isDateInTomorrow(date) {
-                        self.titleLabel.stringValue = "Morgen"
-                    } else {
-                        self.titleLabel.stringValue = date.germanFormatted
-                    }
-                }
             }
-            self.tableView.reloadData()
-            self.tableView.layout()
-            self.tableView.reloadData()
         }
     }
     
@@ -117,16 +72,14 @@ class PopoverViewController: NSViewController, NSTableViewDataSource, NSTableVie
         provider.request(.getMeals) { result in
             switch result {
             case .success(let response):
-                guard !response.data.isEmpty else {
+                self.mealMenu = Menu(fromResponse: response)
+                if response.data.isEmpty {
                     completionHandler?(.noData)
-                    return
-                }
-                guard let menu = Menu(fromResponse: response) else {
+                } else if self.mealMenu == nil {
                     completionHandler?(.failed)
-                    return
+                } else {
+                    completionHandler?(.newData)
                 }
-                self.mealMenu = menu
-                completionHandler?(.newData)
             case .failure(let error):
                 print(error.localizedDescription)
                 completionHandler?(.failed)
@@ -134,13 +87,71 @@ class PopoverViewController: NSViewController, NSTableViewDataSource, NSTableVie
         }
     }
     
-    private func updateStatusLabel(_ string: String?) {
-        statusLabel.isHidden = (string == nil)
-        if let string = string {
-            self.statusLabel.stringValue = string
+    
+    // MARK: - Layouting
+    
+    private func setupTableViewControllers() {
+        guard let menu = mealMenu else { return }
+        
+        let storyboard = NSStoryboard.init(name: "Main", bundle: nil)
+        let identifiers = [String](repeating: "MenuViewController", count: menu.dates.count)
+        loadViewControllers(identifiers, from: storyboard)
+        
+        guard let menuViewControllers = viewControllers as? [MenuViewController] else { return }
+        for (i, viewController) in menuViewControllers.enumerated() {
+            let date = menu.dates[i]
+            viewController.meals = menu.mealsByDate[date] ?? []
         }
     }
     
+    private func updateContentView() {
+        updateTitleLabel()
+        updateNavigationButtons()
+        setupTableViewControllers()
+    }
+
+    private func updateTitleLabel() {
+        let index = pageController.selectedIndex
+        let date = mealMenu?.dates[index]
+
+        titleLabel.stringValue = {
+            switch date {
+            case let date? where Calendar.current.isDateInToday(date):    return "Heute"
+            case let date? where Calendar.current.isDateInTomorrow(date): return "Morgen"
+            case let date?:                                               return date.germanWeekdayFormatted
+            default: return "Mensaplan"
+            }
+        }()
+    }
     
+    private func updateNavigationButtons() {
+        leftNavigationButton.isHidden = !(pageController.selectedIndex > 0)
+        rightNavigationButton.isHidden = !(pageController.selectedIndex < mealMenu!.dates.count-1)
+    }
+    
+    private func updateStatusLabel(contentState: NCUpdateResult?) {
+        statusLabel.stringValue = {
+            switch (contentState, mealMenu) {
+            case (.failed?, _):
+                return "⁉️  Ein Fehler ist aufgetreten."
+            case (.noData?, _):
+                return "∅  Keine Einträge vorhanden."
+            case (.newData?, let menu?) where menu.comingNext.isEmpty:
+                return "👨🏻‍🍳  Keine Enträge für heute."
+            default:
+                return ""
+            }
+        }()
+    }
+
+    
+    // MARK: - Page Controller
+    
+    override func pageController(_ pageController: NSPageController, didTransitionTo object: Any) {
+        super.pageController(pageController, didTransitionTo: object)
+        updateContentView()
+    }
+    
+
 }
 
