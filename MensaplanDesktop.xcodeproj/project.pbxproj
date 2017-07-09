@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0B53E6225A06D7EB9C41FCA4 /* Pods_MensaplanTodayExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFAE466D64E9E190761949D /* Pods_MensaplanTodayExtension.framework */; };
+		638930BD1EFA7AD1002521AE /* FLOPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638930BC1EFA7AD1002521AE /* FLOPageViewController.swift */; };
+		638930C01EFA7ADF002521AE /* FLOArrowControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638930BE1EFA7ADF002521AE /* FLOArrowControl.swift */; };
+		638930C11EFA7ADF002521AE /* FLOPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638930BF1EFA7ADF002521AE /* FLOPageControl.swift */; };
 		63899F3F1EEBFF0100709E34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F3E1EEBFF0100709E34 /* AppDelegate.swift */; };
 		63899F431EEBFF0100709E34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63899F421EEBFF0100709E34 /* Assets.xcassets */; };
 		63899F461EEBFF0100709E34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63899F441EEBFF0100709E34 /* Main.storyboard */; };
@@ -82,6 +85,9 @@
 		0075385E19907704592F494F /* Pods_MensaplanDesktop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MensaplanDesktop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BFAE466D64E9E190761949D /* Pods_MensaplanTodayExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MensaplanTodayExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46D986B64E747CA60691C42B /* Pods-MensaplanTodayExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MensaplanTodayExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MensaplanTodayExtension/Pods-MensaplanTodayExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		638930BC1EFA7AD1002521AE /* FLOPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FLOPageViewController.swift; path = Controllers/FLOPageViewController.swift; sourceTree = "<group>"; };
+		638930BE1EFA7ADF002521AE /* FLOArrowControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FLOArrowControl.swift; path = Views/FLOArrowControl.swift; sourceTree = "<group>"; };
+		638930BF1EFA7ADF002521AE /* FLOPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FLOPageControl.swift; path = Views/FLOPageControl.swift; sourceTree = "<group>"; };
 		63899F3B1EEBFF0100709E34 /* MensaplanDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MensaplanDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63899F3E1EEBFF0100709E34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63899F421EEBFF0100709E34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,6 +161,7 @@
 			children = (
 				63EFC1E01EF7B61700D1741E /* EventMonitor.swift */,
 				63899F441EEBFF0100709E34 /* Main.storyboard */,
+				638930BC1EFA7AD1002521AE /* FLOPageViewController.swift */,
 				63EFC1DE1EF7B03700D1741E /* PopoverViewController.swift */,
 			);
 			name = Controllers;
@@ -281,6 +288,8 @@
 		63899F9D1EEC25EA00709E34 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				638930BE1EFA7ADF002521AE /* FLOArrowControl.swift */,
+				638930BF1EFA7ADF002521AE /* FLOPageControl.swift */,
 				63EFC1E21EF7CFAB00D1741E /* MealCell.swift */,
 				63899F9A1EEC25E700709E34 /* RoundedView.swift */,
 				63899F9E1EEC271100709E34 /* BadgeLabel.swift */,
@@ -580,10 +589,13 @@
 				63899F851EEC02B200709E34 /* Meal.swift in Sources */,
 				63EFC1E11EF7B61700D1741E /* EventMonitor.swift in Sources */,
 				63B50D961EF0A13600526CF1 /* Menu.swift in Sources */,
+				638930C11EFA7ADF002521AE /* FLOPageControl.swift in Sources */,
 				63899F831EEC02B200709E34 /* File.swift in Sources */,
 				63899F911EEC05D800709E34 /* Date+.swift in Sources */,
 				63EFC1DF1EF7B03700D1741E /* PopoverViewController.swift in Sources */,
+				638930C01EFA7ADF002521AE /* FLOArrowControl.swift in Sources */,
 				63899F3F1EEBFF0100709E34 /* AppDelegate.swift in Sources */,
+				638930BD1EFA7AD1002521AE /* FLOPageViewController.swift in Sources */,
 				63899F891EEC02BF00709E34 /* BackendService.swift in Sources */,
 				63899F921EEC05D800709E34 /* NSNumber+.swift in Sources */,
 			);
