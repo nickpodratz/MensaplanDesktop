@@ -9,16 +9,10 @@
 import Moya
 import MoyaSugar
 
-enum BackendService {
+enum BackendService: SugarTargetType {
     
     case getMeals
-    
-    
-}
 
-
-extension BackendService: SugarTargetType {
-    
     var baseURL: URL { return URL(string: "https://mobile-developer.hpi.uni-potsdam.de")! }
     
     var route: Route {
@@ -50,10 +44,10 @@ extension BackendService: SugarTargetType {
         }
         do {
             return try file.readContents()
-        } catch let error as FileError {
+        } catch let error as File.AccessError {
             return error.jsonFormattedData ?? Data()
         } catch let error as NSError {
-            return FileError.other(error: error, withFile: file).jsonFormattedData ?? Data()
+            return File.AccessError.other(error: error, withFile: file).jsonFormattedData ?? Data()
         }
     }
     
