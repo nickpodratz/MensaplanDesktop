@@ -10,19 +10,24 @@ import Foundation
 
 extension Date {
     
-    var isToday: Bool {
-        return Calendar.current.isDate(self, inSameDayAs: Date())
-    }
-    
-    var isTomorrow: Bool {
-        guard let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date()) else { return false }
-        return Calendar.current.isDate(self, inSameDayAs: tomorrow)
-    }
-
-    var germanDateFormatted: String {
+    var germanFormatted: String {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         return formatter.string(from: self)
+    }
+
+    var germanWeekdayFormatted: String {
+        let formatter = DateFormatter()
+        if componentValue(.year) == Date().componentValue(.year) {
+            formatter.dateFormat = "EEEE, d.M."
+        } else {
+            formatter.dateFormat = "EEEE, d.M.YY"
+        }
+        return formatter.string(from: self)
+    }
+    
+    func componentValue(_ unitFlags: Calendar.Component) -> Int {
+        return Calendar.current.component(unitFlags, from: self)
     }
     
     init? (from string: String, format: String) {

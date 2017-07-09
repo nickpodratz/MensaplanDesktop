@@ -10,7 +10,7 @@ import Moya
 import SwiftyJSON
 
 class Meal: NSObject {
-    
+
     var title: String
     var category: String?
     var price: NSNumber?
@@ -28,13 +28,8 @@ class Meal: NSObject {
     }
     
     
-}
-
-
-// MARK: - Convenience Accessors
-
-extension Meal {
-        
+    // MARK: - Convenience Properties
+    
     var priceString: String? {
         guard let price = price else { return nil }
         let numberFormatter = NumberFormatter()
@@ -57,32 +52,23 @@ extension Meal {
     }
     
     
-}
-
-
-// MARK: - : CustomStringConvertible
-
-extension Meal {
+    // MARK: - Custom String Convertible
     
     override var description: String {
-        let dateString = date?.germanDateFormatted
+        let dateString = date?.germanFormatted
         let priceString = price?.germanCurrencyFormatted
         let description = [dateString, location, category, title, priceString].flatMap{$0}.joined(separator: " > ")
         return "🍕 \(description)"
     }
     
-}
-
-
-// MARK: - + JSON Deserialization
-
-extension Meal {
+    
+    // MARK: - JSON Deserializing
     
     static func array(fromResponse response: Response) -> [Meal] {
         let json = JSON(data: response.data)
         return Meal.array(fromJSON: json)
     }
-
+    
     static func array(fromJSON json: JSON) -> [Meal] {
         var meals: [Meal] = []
         

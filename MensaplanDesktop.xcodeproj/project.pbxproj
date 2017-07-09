@@ -11,6 +11,8 @@
 		638930BD1EFA7AD1002521AE /* FLOPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638930BC1EFA7AD1002521AE /* FLOPageViewController.swift */; };
 		638930C01EFA7ADF002521AE /* FLOArrowControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638930BE1EFA7ADF002521AE /* FLOArrowControl.swift */; };
 		638930C11EFA7ADF002521AE /* FLOPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638930BF1EFA7ADF002521AE /* FLOPageControl.swift */; };
+        638930C51EFAA2D2002521AE /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638930C41EFAA2D2002521AE /* Array+.swift */; };
+        638930C61EFAA4CE002521AE /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638930C41EFAA2D2002521AE /* Array+.swift */; };
 		63899F3F1EEBFF0100709E34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63899F3E1EEBFF0100709E34 /* AppDelegate.swift */; };
 		63899F431EEBFF0100709E34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63899F421EEBFF0100709E34 /* Assets.xcassets */; };
 		63899F461EEBFF0100709E34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63899F441EEBFF0100709E34 /* Main.storyboard */; };
@@ -89,6 +91,7 @@
 		638930BE1EFA7ADF002521AE /* FLOArrowControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FLOArrowControl.swift; path = Views/FLOArrowControl.swift; sourceTree = "<group>"; };
 		638930BF1EFA7ADF002521AE /* FLOPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FLOPageControl.swift; path = Views/FLOPageControl.swift; sourceTree = "<group>"; };
 		63899F3B1EEBFF0100709E34 /* MensaplanDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MensaplanDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        638930C41EFAA2D2002521AE /* Array+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+.swift"; path = "Extensions/Array+.swift"; sourceTree = "<group>"; };
 		63899F3E1EEBFF0100709E34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63899F421EEBFF0100709E34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		63899F451EEBFF0100709E34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -279,6 +282,7 @@
 		63899F931EEC05E300709E34 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				638930C41EFAA2D2002521AE /* Array+.swift */,
 				63899F8F1EEC05D800709E34 /* Date+.swift */,
 				63899F901EEC05D800709E34 /* NSNumber+.swift */,
 			);
@@ -596,6 +600,7 @@
 				638930C01EFA7ADF002521AE /* FLOArrowControl.swift in Sources */,
 				63899F3F1EEBFF0100709E34 /* AppDelegate.swift in Sources */,
 				638930BD1EFA7AD1002521AE /* FLOPageViewController.swift in Sources */,
+                638930C51EFAA2D2002521AE /* Array+.swift in Sources */,
 				63899F891EEC02BF00709E34 /* BackendService.swift in Sources */,
 				63899F921EEC05D800709E34 /* NSNumber+.swift in Sources */,
 			);
@@ -613,6 +618,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638930C61EFAA4CE002521AE /* Array+.swift in Sources */,
 				63EFC1E41EF7CFAB00D1741E /* MealCell.swift in Sources */,
 				63899FA01EEC271100709E34 /* BadgeLabel.swift in Sources */,
 				63899F9C1EEC25E700709E34 /* RoundedView.swift in Sources */,

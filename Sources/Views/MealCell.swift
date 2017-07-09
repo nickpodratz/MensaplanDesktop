@@ -16,6 +16,9 @@ class MealCell: NSTableCellView {
     @IBOutlet weak var priceTextFieldUpConstraint: NSLayoutConstraint!
     @IBOutlet weak var priceTextFieldHeightConstraint: NSLayoutConstraint!
     
+    
+    // MARK: - Custom Layout
+    
     override func updateConstraints() {
         super.updateConstraints()
         if priceTextField.stringValue.isEmpty {

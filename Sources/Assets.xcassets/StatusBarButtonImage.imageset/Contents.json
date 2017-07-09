@@ -1,25 +1,11 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "idiom" : "universal"
     },
     {
       "idiom" : "mac",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "mac",
-      "filename" : "StatusBarButtonImage@2x.png",
-      "scale" : "2x"
+      "filename" : "PizzaSlice.pdf"
     }
   ],
   "info" : {
@@ -27,6 +13,6 @@
     "author" : "xcode"
   },
   "properties" : {
-    "template-rendering-intent" : "template"
+    "template-rendering-intent" : "original"
   }
 }

@@ -8,8 +8,6 @@
 
 import Cocoa
 
-// MARK: BadgeLabel
-
 /**
     `BadgeLabel` is a `UILabel` subclass that immitates Apple's homescreen notification-badge.
     You can customize `offset` (default x: 6, y: 2) to change the padding around the text.
@@ -17,7 +15,18 @@ import Cocoa
 */
 @IBDesignable class BadgeTextField: NSTextField {
     
-    // MARK: Properties
+    // A convenience property based on the designable `offset` property
+    var edgeInsets: EdgeInsets {
+        return EdgeInsets(
+            top: offset.y,
+            left: offset.x,
+            bottom: offset.y,
+            right: offset.x
+        )
+    }
+
+    
+    // MARK: - Designable Properties
     
     /// The padding around the displayed text
     @IBInspectable var offset: CGPoint = CGPoint(x: 6, y: 2) {
@@ -26,24 +35,11 @@ import Cocoa
         }
     }
     
-    // A computed read-only property derived from the `offset` property
-    fileprivate var edgeInsets: EdgeInsets {
-        return EdgeInsets(
-            top: offset.y,
-            left: offset.x,
-            bottom: offset.y,
-            right: offset.x
-        )
-    }
     
-    // MARK: Setup
+    // MARK: - Initialization
     
     fileprivate func commonInit() {
         alignment = .center
-        // Uncomment the following line to set a default font (not customizable in IB!)
-        // font = UIFont.preferredFontForTextStyle(UIFontTextStyleFootnote)
-        // Uncomment the following line to set a default background-color (not customizable in IB!)
-        // layer.backgroundColor = UIColor.redColor().CGColor
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -62,8 +58,7 @@ import Cocoa
     }
     
     
-    // MARK: Drawing
-
+    // MARK: - Custom Drawing
 
     override func layout() {
         super.layout()

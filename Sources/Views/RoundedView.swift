@@ -10,6 +10,8 @@ import Cocoa
 
 @IBDesignable class RoundedView: NSView {
     
+    // MARK: - Designable Properties
+    
     @IBInspectable var cornerRadius: CGFloat = 4 {
         didSet{
             self.layer?.cornerRadius = cornerRadius
@@ -35,6 +37,8 @@ import Cocoa
 
 @IBDesignable class RoundedImageView: NSImageView {
     
+    // MARK: - Designable Properties
+    
     @IBInspectable var cornerRadius: CGFloat = 4 {
         didSet{
             self.layer?.cornerRadius = cornerRadius
@@ -59,6 +63,8 @@ import Cocoa
 
 
 @IBDesignable class RoundedButton: NSButton {
+    
+    // MARK: - Designable Properties
     
     @IBInspectable var cornerRadius: CGFloat = 4 {
         didSet{

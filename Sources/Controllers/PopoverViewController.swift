@@ -98,12 +98,12 @@ class PopoverViewController: NSViewController, NSTableViewDataSource, NSTableVie
                 self.clickGestureRecognizer.isEnabled = true
             case .newData:
                 if let meal = self.mealMenu?.today.first, let date = meal.date {
-                    if date.isToday {
+                    if Calendar.current.isDateInToday(date) {
                         self.titleLabel.stringValue = "Heute"
-                    } else if date.isTomorrow {
+                    } else if Calendar.current.isDateInTomorrow(date) {
                         self.titleLabel.stringValue = "Morgen"
                     } else {
-                        self.titleLabel.stringValue = date.germanDateFormatted
+                        self.titleLabel.stringValue = date.germanFormatted
                     }
                 }
             }
