@@ -687,7 +687,14 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kJF-li-5MC">
-                                <rect key="frame" x="127" y="399" width="70" height="17"/>
+                                <rect key="frame" x="127" y="398" width="70" height="17"/>
+                                <gestureRecognizers>
+                                    <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="Onc-DE-a7U">
+                                        <connections>
+                                            <action selector="handleViewClicked:" target="XfG-lQ-9wD" id="Krg-t1-qII"/>
+                                        </connections>
+                                    </clickGestureRecognizer>
+                                </gestureRecognizers>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Mensaplan" id="N6t-Sa-IWJ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -697,24 +704,26 @@
                             <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="dm0-Vd-YV4">
                                 <rect key="frame" x="153" y="211" width="16" height="16"/>
                             </progressIndicator>
-                            <button identifier="LeftNavigationButton" verticalHuggingPriority="750" tag="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SD7-FR-CoW">
-                                <rect key="frame" x="14" y="389" width="49" height="32"/>
-                                <buttonCell key="cell" type="push" title="&lt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qzc-9t-5uW">
+                            <button identifier="QuitNavigationButton" hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Wkm-Pd-iDf">
+                                <rect key="frame" x="278" y="398" width="14" height="17"/>
+                                <buttonCell key="cell" type="square" title="✕" bezelStyle="shadowlessSquare" alignment="center" state="on" inset="2" id="Dcn-Yc-u7j">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent">q</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="handleQuitClicked:" target="XfG-lQ-9wD" id="jmh-al-zYz"/>
+                                </connections>
+                            </button>
+                            <button identifier="LeftNavigationButton" verticalHuggingPriority="750" tag="-1" translatesAutoresizingMaskIntoConstraints="NO" id="SD7-FR-CoW">
+                                <rect key="frame" x="14" y="388" width="49" height="33"/>
+                                <buttonCell key="cell" type="push" title="&lt;" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Qzc-9t-5uW">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent"></string>
                                 </buttonCell>
                                 <connections>
                                     <action selector="handleNavigationButtonClicked:" target="XfG-lQ-9wD" id="hbU-CB-dhh"/>
-                                </connections>
-                            </button>
-                            <button identifier="RightNavigationButton" verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="7Pz-xN-7Sn">
-                                <rect key="frame" x="260" y="389" width="49" height="32"/>
-                                <buttonCell key="cell" type="push" title="&gt;" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Y6x-Ug-Q8I">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="handleNavigationButtonClicked:" target="XfG-lQ-9wD" id="BWL-sh-wut"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40n-AH-Xtr">
@@ -725,31 +734,39 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button identifier="RightNavigationButton" verticalHuggingPriority="750" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="7Pz-xN-7Sn">
+                                <rect key="frame" x="260" y="389" width="49" height="32"/>
+                                <buttonCell key="cell" type="push" title="&gt;" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Y6x-Ug-Q8I">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent"></string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="handleNavigationButtonClicked:" target="XfG-lQ-9wD" id="BWL-sh-wut"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="Wkm-Pd-iDf" firstAttribute="centerX" secondItem="7Pz-xN-7Sn" secondAttribute="centerX" id="4ww-x7-Vii"/>
                             <constraint firstAttribute="trailing" secondItem="7Pz-xN-7Sn" secondAttribute="trailing" constant="20" id="EOo-uk-CB6"/>
                             <constraint firstItem="kJF-li-5MC" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="PgM-tW-yaK"/>
                             <constraint firstItem="SD7-FR-CoW" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="RYR-r5-Ifu"/>
                             <constraint firstItem="dm0-Vd-YV4" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="Rm4-KW-M7F"/>
                             <constraint firstItem="7Pz-xN-7Sn" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="bKc-w3-ODS"/>
                             <constraint firstItem="SD7-FR-CoW" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="elf-oQ-9TN"/>
+                            <constraint firstItem="Wkm-Pd-iDf" firstAttribute="centerY" secondItem="7Pz-xN-7Sn" secondAttribute="centerY" id="gZa-Zq-wsT"/>
                             <constraint firstItem="40n-AH-Xtr" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="hpR-EQ-1sl"/>
                             <constraint firstItem="kJF-li-5MC" firstAttribute="baseline" secondItem="SD7-FR-CoW" secondAttribute="baseline" id="iQ4-K9-haD"/>
+                            <constraint firstItem="Wkm-Pd-iDf" firstAttribute="baseline" secondItem="kJF-li-5MC" secondAttribute="baseline" id="rEX-Xv-11f"/>
                             <constraint firstItem="40n-AH-Xtr" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="ts1-jO-5g0"/>
                             <constraint firstItem="dm0-Vd-YV4" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="yFK-qB-Cft"/>
                         </constraints>
-                        <gestureRecognizers>
-                            <clickGestureRecognizer delaysPrimaryMouseButtonEvents="YES" numberOfClicksRequired="1" id="Onc-DE-a7U">
-                                <connections>
-                                    <action selector="handleViewClicked:" target="XfG-lQ-9wD" id="Krg-t1-qII"/>
-                                </connections>
-                            </clickGestureRecognizer>
-                        </gestureRecognizers>
                     </view>
                     <connections>
                         <outlet property="clickGestureRecognizer" destination="Onc-DE-a7U" id="xF0-X8-ndP"/>
                         <outlet property="leftNavigationButton" destination="SD7-FR-CoW" id="Pse-L2-JN0"/>
                         <outlet property="progressIndicator" destination="dm0-Vd-YV4" id="oLu-By-Dkn"/>
+                        <outlet property="quitNavigationButton" destination="Wkm-Pd-iDf" id="Ynp-4m-xOG"/>
                         <outlet property="rightNavigationButton" destination="7Pz-xN-7Sn" id="8sd-F3-FGH"/>
                         <outlet property="statusLabel" destination="40n-AH-Xtr" id="ZW2-lm-1w2"/>
                         <outlet property="titleLabel" destination="kJF-li-5MC" id="ETE-E9-mDu"/>
@@ -776,11 +793,11 @@
                                         <tableView focusRingType="none" verticalHuggingPriority="750" allowsExpansionToolTips="YES" selectionHighlightStyle="none" columnReordering="NO" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="71" rowSizeStyle="automatic" viewBased="YES" id="gYE-Ux-fqD">
                                             <rect key="frame" x="0.0" y="0.0" width="283" height="353"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <size key="intercellSpacing" width="2" height="2"/>
+                                            <size key="intercellSpacing" width="0.0" height="2"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn editable="NO" width="280" minWidth="40" maxWidth="1000" id="y3T-83-QMH">
+                                                <tableColumn editable="NO" width="279" minWidth="40" maxWidth="1000" id="y3T-83-QMH">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -793,11 +810,11 @@
                                                     </textFieldCell>
                                                     <prototypeCellViews>
                                                         <customView identifier="MealCell" focusRingType="none" id="LAj-8p-kHr" customClass="MealCell" customModule="MensaplanDesktop" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="1" width="280" height="71"/>
+                                                            <rect key="frame" x="0.0" y="1" width="279" height="71"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQf-AD-NAj">
-                                                                    <rect key="frame" x="6" y="49" width="256" height="14"/>
+                                                                    <rect key="frame" x="8" y="49" width="251" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="14" id="zoe-qf-ZXh"/>
                                                                     </constraints>
@@ -808,15 +825,15 @@
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dn-pk-mGl">
-                                                                    <rect key="frame" x="6" y="28" width="256" height="19"/>
-                                                                    <textFieldCell key="cell" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Mein absolutes Lieblingsessen" id="R5r-0n-psC">
+                                                                    <rect key="frame" x="8" y="28" width="251" height="19"/>
+                                                                    <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="Mein absolutes Lieblingsessen" id="R5r-0n-psC">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
                                                                 <textField horizontalHuggingPriority="251" horizontalCompressionResistancePriority="1000" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmT-VN-kya" customClass="BadgeTextField" customModule="MensaplanDesktop" customModuleProvider="target">
-                                                                    <rect key="frame" x="8" y="8" width="39" height="14"/>
+                                                                    <rect key="frame" x="10" y="8" width="39" height="14"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="14" id="csl-rS-kQn"/>
                                                                     </constraints>
@@ -833,9 +850,9 @@
                                                                 </textField>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="IQf-AD-NAj" firstAttribute="leading" secondItem="LAj-8p-kHr" secondAttribute="leading" constant="8" id="Ipf-SP-aWw"/>
-                                                                <constraint firstAttribute="trailing" secondItem="2dn-pk-mGl" secondAttribute="trailing" constant="20" id="JKh-1Y-bOj"/>
-                                                                <constraint firstAttribute="trailing" secondItem="IQf-AD-NAj" secondAttribute="trailing" constant="20" id="K17-Xv-59k"/>
+                                                                <constraint firstItem="IQf-AD-NAj" firstAttribute="leading" secondItem="LAj-8p-kHr" secondAttribute="leading" constant="10" id="Ipf-SP-aWw"/>
+                                                                <constraint firstAttribute="trailing" secondItem="2dn-pk-mGl" secondAttribute="trailing" constant="22" id="JKh-1Y-bOj"/>
+                                                                <constraint firstAttribute="trailing" secondItem="IQf-AD-NAj" secondAttribute="trailing" constant="22" id="K17-Xv-59k"/>
                                                                 <constraint firstItem="IQf-AD-NAj" firstAttribute="top" secondItem="LAj-8p-kHr" secondAttribute="top" constant="8" id="K85-5x-2Ze"/>
                                                                 <constraint firstItem="bmT-VN-kya" firstAttribute="leading" secondItem="2dn-pk-mGl" secondAttribute="leading" id="YMW-v3-KHU"/>
                                                                 <constraint firstItem="bmT-VN-kya" firstAttribute="top" secondItem="2dn-pk-mGl" secondAttribute="bottom" constant="6" id="egE-5G-Ne9"/>
@@ -859,7 +876,7 @@
                                     <color key="backgroundColor" red="0.22714027480000001" green="0.90278846150000003" blue="0.42983473080000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="FkK-Y8-Evf">
-                                    <rect key="frame" x="0.0" y="421" width="280" height="16"/>
+                                    <rect key="frame" x="0.0" y="337" width="283" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="VOp-2D-IMe">

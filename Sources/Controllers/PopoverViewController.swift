@@ -12,6 +12,7 @@ import Moya
 
 class PopoverViewController: FLOPageViewController {
     
+    @IBOutlet weak var quitNavigationButton: NSButton!
     @IBOutlet weak var leftNavigationButton: NSButton!
     @IBOutlet weak var rightNavigationButton: NSButton!
     @IBOutlet weak var titleLabel: NSTextField!
@@ -33,6 +34,7 @@ class PopoverViewController: FLOPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateNavigationButtons()
         reloadData()
     }
     
@@ -51,6 +53,10 @@ class PopoverViewController: FLOPageViewController {
         }
     }
     
+    @IBAction func handleQuitClicked(_ sender: AnyObject) {
+        NSApplication.shared().terminate(self)
+    }
+    
     
     // MARK: - Networking
     
@@ -63,6 +69,7 @@ class PopoverViewController: FLOPageViewController {
             self.progressIndicator.stopAnimation(self)
             self.updateStatusLabel(contentState: result)
             self.updateContentView()
+            self.setupTableViewControllers()
             if result != .newData { // enable reload only if data is invalid
                 self.clickGestureRecognizer.isEnabled = true
             }
@@ -105,12 +112,15 @@ class PopoverViewController: FLOPageViewController {
         }
         pageController.selectedViewController?.viewWillAppear()
         pageController.selectedViewController?.viewDidLoad()
+        for vc in viewControllers {
+            vc.loadView()
+            vc.view.layoutSubtreeIfNeeded()
+        }
     }
     
     private func updateContentView() {
         updateTitleLabel()
         updateNavigationButtons()
-        setupTableViewControllers()
     }
 
     private func updateTitleLabel() {
@@ -128,6 +138,7 @@ class PopoverViewController: FLOPageViewController {
     }
     
     private func updateNavigationButtons() {
+        defer { quitNavigationButton.isHidden = !rightNavigationButton.isHidden }
         guard let menu = mealMenu else {
             leftNavigationButton.isHidden = true
             rightNavigationButton.isHidden = true
@@ -135,6 +146,7 @@ class PopoverViewController: FLOPageViewController {
         }
         leftNavigationButton.isHidden = !(pageController.selectedIndex > 0)
         rightNavigationButton.isHidden = !(pageController.selectedIndex < menu.dates.count-1)
+        quitNavigationButton.isHidden = (pageController.selectedIndex < menu.dates.count-1)
     }
     
     private func updateStatusLabel(contentState: NCUpdateResult?) {
