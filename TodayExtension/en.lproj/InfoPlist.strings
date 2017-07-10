@@ -1,4 +1,4 @@
 /* Display name and description for this extension. */
-"CFBundleDisplayName" = "Mensa (Heute)";
+"CFBundleDisplayName" = "Mensaplan (Heute)";
 "com.apple.notificationcenter.widget.description" = "Today's dishes at Mensa Griebnitzsee and Ulf's Cafe";
 

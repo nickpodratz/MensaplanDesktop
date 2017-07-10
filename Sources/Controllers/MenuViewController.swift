@@ -23,10 +23,13 @@ class MenuViewController: NSViewController, NSTableViewDataSource, NSTableViewDe
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.layout()
+        tableView.reloadData()
     }
     
     override func viewWillAppear() {
         super.viewWillAppear()
+        viewDidAppear()
         tableView.reloadData()
     }
     

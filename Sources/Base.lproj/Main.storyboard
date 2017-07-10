@@ -856,7 +856,7 @@
                                             </tableColumns>
                                         </tableView>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="deviceWhite"/>
+                                    <color key="backgroundColor" red="0.22714027480000001" green="0.90278846150000003" blue="0.42983473080000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="FkK-Y8-Evf">
                                     <rect key="frame" x="0.0" y="421" width="280" height="16"/>
@@ -876,7 +876,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="gYE-Ux-fqD" id="Qye-ma-rxx"/>
+                        <outlet property="tableView" destination="gYE-Ux-fqD" id="CLz-rI-dh1"/>
                     </connections>
                 </viewController>
                 <customObject id="mDm-Eq-MU9" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

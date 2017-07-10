@@ -102,6 +102,8 @@ class PopoverViewController: FLOPageViewController {
             let date = menu.dates[i]
             viewController.meals = menu.mealsByDate[date] ?? []
         }
+        pageController.selectedViewController?.viewWillAppear()
+        pageController.selectedViewController?.viewDidLoad()
     }
     
     private func updateContentView() {
@@ -125,8 +127,17 @@ class PopoverViewController: FLOPageViewController {
     }
     
     private func updateNavigationButtons() {
+        guard let menu = mealMenu else {
+            [leftNavigationButton, rightNavigationButton].forEach {
+                $0?.isEnabled = true
+                $0?.isHidden = false
+            }
+            return
+        }
+        leftNavigationButton.isEnabled = true
+        rightNavigationButton.isEnabled = true
         leftNavigationButton.isHidden = !(pageController.selectedIndex > 0)
-        rightNavigationButton.isHidden = !(pageController.selectedIndex < mealMenu!.dates.count-1)
+        rightNavigationButton.isHidden = !(pageController.selectedIndex < menu.dates.count-1)
     }
     
     private func updateStatusLabel(contentState: NCUpdateResult?) {
