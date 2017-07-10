@@ -22,27 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     // MARK: - Popover
     
-    func showPopover(sender: AnyObject?) {
-        if let button = statusItem.button {
-            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
-            eventMonitor?.isEnabled = true
-        }
-    }
-
-    func closePopover(sender: AnyObject?) {
-        popover.performClose(sender)
-        eventMonitor?.isEnabled = false
-    }
-    
-    @objc func togglePopover(sender: AnyObject?) {
-        if popover.isShown {
-            closePopover(sender: sender)
-        } else {
-            showPopover(sender: sender)
-        }
-    }
-    
-    func setupPopover() {
+    private func setupPopover() {
         if let button = statusItem.button {
             button.image = NSImage(named: "StatusBarButtonImage")
             button.action = #selector(togglePopover)
@@ -56,6 +36,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 self.closePopover(sender: event)
             }
         }
+    }
+    
+    @objc func togglePopover(sender: AnyObject?) {
+        popover.isShown ?
+            closePopover(sender: sender) :
+            showPopover(sender: sender)
+    }
+    
+    private func showPopover(sender: AnyObject?) {
+        if let button = statusItem.button {
+            popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+            eventMonitor?.isEnabled = true
+        }
+    }
+    
+    private func closePopover(sender: AnyObject?) {
+        popover.performClose(sender)
+        eventMonitor?.isEnabled = false
     }
     
     
