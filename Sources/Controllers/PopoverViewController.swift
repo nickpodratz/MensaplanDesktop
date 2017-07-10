@@ -20,18 +20,19 @@ class PopoverViewController: FLOPageViewController {
     @IBOutlet weak var clickGestureRecognizer: NSClickGestureRecognizer!
     
     var mealMenu: Menu?
-    var provider: MoyaProvider<BackendService>!
+    var provider: MoyaProvider<BackendService> = {
+        #if DEBUG
+            return MoyaProvider<BackendService>(stubClosure: MoyaProvider.delayedStub(1))
+        #else
+            return MoyaProvider<BackendService>()
+        #endif
+    }()
     
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        #if DEBUG
-            provider = MoyaProvider<BackendService>(stubClosure: MoyaProvider.delayedStub(1))
-        #else
-            provider = MoyaProvider<BackendService>()
-        #endif
         reloadData()
     }
     
@@ -121,21 +122,17 @@ class PopoverViewController: FLOPageViewController {
             case let date? where Calendar.current.isDateInToday(date):    return "Heute"
             case let date? where Calendar.current.isDateInTomorrow(date): return "Morgen"
             case let date?:                                               return date.germanWeekdayFormatted
-            default: return "Mensaplan"
+            default:                                                      return "Mensaplan"
             }
         }()
     }
     
     private func updateNavigationButtons() {
         guard let menu = mealMenu else {
-            [leftNavigationButton, rightNavigationButton].forEach {
-                $0?.isEnabled = true
-                $0?.isHidden = false
-            }
+            leftNavigationButton.isHidden = true
+            rightNavigationButton.isHidden = true
             return
         }
-        leftNavigationButton.isEnabled = true
-        rightNavigationButton.isEnabled = true
         leftNavigationButton.isHidden = !(pageController.selectedIndex > 0)
         rightNavigationButton.isHidden = !(pageController.selectedIndex < menu.dates.count-1)
     }

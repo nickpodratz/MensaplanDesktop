@@ -16,7 +16,13 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
     
     var mealMenu: Menu?
-    var provider: MoyaProvider<BackendService>!
+    var provider: MoyaProvider<BackendService> = {
+        #if DEBUG
+            return MoyaProvider<BackendService>(stubClosure: MoyaProvider.delayedStub(1))
+        #else
+            return MoyaProvider<BackendService>()
+        #endif
+    }()
 
     // MARK: - NSViewController
     
@@ -26,11 +32,6 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        #if DEBUG
-            provider = MoyaProvider<BackendService>(stubClosure: MoyaProvider.delayedStub(1))
-        #else
-            provider = MoyaProvider<BackendService>()
-        #endif
     }
     
     override func viewWillAppear() {
