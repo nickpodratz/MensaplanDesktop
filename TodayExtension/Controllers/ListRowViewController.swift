@@ -22,6 +22,9 @@ class ListRowViewController: NSViewController {
         return "ListRowViewController"
     }
     
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()

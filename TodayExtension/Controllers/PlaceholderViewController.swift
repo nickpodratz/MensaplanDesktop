@@ -23,6 +23,9 @@ class PlaceholderViewController: NSViewController {
     override var nibName: String? {
         return "PlaceholderViewController"
     }
+    
+    
+    // MARK: - Life Cycle
 
     override func loadView() {
         super.loadView()

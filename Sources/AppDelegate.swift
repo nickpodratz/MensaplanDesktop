@@ -22,6 +22,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     // MARK: - Popover
     
+    @objc func togglePopover(sender: AnyObject?) {
+        popover.isShown ?
+            closePopover(sender: sender) :
+            showPopover(sender: sender)
+    }
+    
     private func setupPopover() {
         if let button = statusItem.button {
             button.image = NSImage(named: "StatusBarButtonImage")
@@ -37,13 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
     }
-    
-    @objc func togglePopover(sender: AnyObject?) {
-        popover.isShown ?
-            closePopover(sender: sender) :
-            showPopover(sender: sender)
-    }
-    
+
     private func showPopover(sender: AnyObject?) {
         if let button = statusItem.button {
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)

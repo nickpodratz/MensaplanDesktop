@@ -16,6 +16,7 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
     @IBOutlet weak var progressIndicator: NSProgressIndicator!
     
     var mealMenu: Menu?
+    
     var provider: MoyaProvider<BackendService> = {
         #if DEBUG
             return MoyaProvider<BackendService>(stubClosure: MoyaProvider.delayedStub(1))
@@ -23,12 +24,13 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
             return MoyaProvider<BackendService>()
         #endif
     }()
-
-    // MARK: - NSViewController
     
     override var nibName: String? {
         return "TodayViewController"
     }
+    
+    
+    // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,7 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
         listViewController.delegate = self
         widgetPerformUpdate() {_ in }
     }
+    
     
     // MARK: - NCWidgetProviding
     
@@ -53,6 +56,7 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
         newInsets.left = 0
         return newInsets
     }
+    
     
     // MARK: - NCWidgetListViewDelegate
     

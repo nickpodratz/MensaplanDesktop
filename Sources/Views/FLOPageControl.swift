@@ -12,7 +12,8 @@ class FLOPageControl: NSControl {
     
     private var needsToRedrawIndicators = false
     
-// MARK: - Appearance
+
+    // MARK: - Appearance
     
     var color = NSColor.black {
         didSet {
@@ -37,7 +38,8 @@ class FLOPageControl: NSControl {
         }
     }
     
-// MARK: - Pages
+
+    // MARK: - Pages
     
     var numberOfPages: UInt = 0 {
         didSet {
@@ -51,7 +53,8 @@ class FLOPageControl: NSControl {
         }
     }
     
-// MARK: - NSControl
+
+    // MARK: - NSControl
     
     override var frame: NSRect {
         willSet {
@@ -59,7 +62,8 @@ class FLOPageControl: NSControl {
         }
     }
 
-// MARK: - Drawing
+
+    // MARK: - Drawing
     
     override func draw(_ dirtyRect: NSRect) {
         guard self.needsToRedrawIndicators else { return }
@@ -94,7 +98,8 @@ class FLOPageControl: NSControl {
         self.needsToRedrawIndicators = false
     }
     
-// MARK: - Mouse
+
+    // MARK: - Mouse
     
     override func mouseDown(with theEvent: NSEvent) {
         let location = self.convert(theEvent.locationInWindow, from: nil)
@@ -111,7 +116,8 @@ class FLOPageControl: NSControl {
         self.highlightIndicator(at: location, sendAction: true)
     }
     
-// MARK: - Helpers
+
+    // MARK: - Helpers
     
     private func highlightIndicator(at location: NSPoint, sendAction: Bool = false) {
         var newPage = self.selectedPage
@@ -143,4 +149,6 @@ class FLOPageControl: NSControl {
         self.needsDisplay = true
     }
     
+    
 }
+

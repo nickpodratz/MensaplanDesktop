@@ -349,7 +349,9 @@ class FLOPageViewController: NSViewController {
         self.pageControl?.selectedPage = UInt(self.pageController.selectedIndex)
     }
     
+    
 }
+
 
 extension FLOPageViewController: NSPageControllerDelegate {
     
@@ -376,7 +378,9 @@ extension FLOPageViewController: NSPageControllerDelegate {
         self.pageController.completeTransition() // we need to do this, see docs
     }
     
+    
 }
+
 
 extension FLOPageViewController {
     
@@ -398,10 +402,13 @@ extension FLOPageViewController {
         return size
     }
     
+    
 }
+
 
 extension Array {
     mutating func reverseInPlace() {
         self = self.reversed()
     }
 }
+

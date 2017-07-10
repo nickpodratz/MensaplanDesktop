@@ -19,6 +19,9 @@ public class EventMonitor {
             newValue ? enable() : disable()
         }
     }
+    
+    
+    // MARK: - Initializing
 
     init(mask: NSEventMask, handler: @escaping (NSEvent?) -> ()) {
         self.mask = mask
@@ -31,7 +34,7 @@ public class EventMonitor {
     }
     
     
-    // MARK: Helpers
+    // MARK: - Helpers
     
     private func enable() {
         monitor = NSEvent.addGlobalMonitorForEvents(matching: mask, handler: handler) as AnyObject
@@ -46,3 +49,4 @@ public class EventMonitor {
     
     
 }
+

@@ -16,7 +16,8 @@ class FLOArrowControl: NSControl {
         }
     }
     
-// MARK: - Properties
+    
+    // MARK: - Properties
     
     enum Direction {
         case left
@@ -35,7 +36,8 @@ class FLOArrowControl: NSControl {
         }
     }
     
-// MARK: - Drawing
+
+    // MARK: - Drawing
     
     override func draw(_ dirtyRect: NSRect) {
         let drawRightArrow = self.direction == .right
@@ -52,7 +54,8 @@ class FLOArrowControl: NSControl {
         bezierPath.stroke()
     }
     
-// MARK: - Mouse
+
+    // MARK: - Mouse
     
     override func mouseDown(with theEvent: NSEvent) {
         super.mouseDown(with: theEvent)
@@ -67,4 +70,6 @@ class FLOArrowControl: NSControl {
         NSApp.sendAction(action, to: target, from: self)
     }
     
+    
 }
+
