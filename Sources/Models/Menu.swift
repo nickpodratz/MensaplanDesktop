@@ -23,9 +23,8 @@ class Menu {
     // MARK: - Convenience Properties
     
     var dates: [Date] {
-        return meals
-            .flatMap { $0.date }
-            .orderedSet
+        let mealsWithDates = meals.flatMap { $0.date }
+        return Set(mealsWithDates).sorted()
     }
     
     var mealsByDate: [Date: [Meal]] {
