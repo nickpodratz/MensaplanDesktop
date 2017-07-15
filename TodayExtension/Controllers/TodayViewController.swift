@@ -34,22 +34,12 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear() {
         listViewController.delegate = self
-        widgetPerformUpdate() {_ in }
+        updateWidgetContent(completionHandler: updateView)
     }
-    
+        
     
     // MARK: - NCWidgetProviding
-    
-    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        updateWidgetContents() { result in
-            completionHandler(result)
-            self.updateView(result)
-        }
-    }
     
     func widgetMarginInsets(forProposedMarginInsets defaultMarginInset: EdgeInsets) -> EdgeInsets {
         var newInsets = defaultMarginInset
@@ -74,13 +64,8 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
         }
     }
     
-    func updateWidgetContents(completionHandler: ((NCUpdateResult) -> Void)? = nil) {
-        listViewController.contents = [""]
-        progressIndicator.startAnimation(self)
-
+    func updateWidgetContent(completionHandler: ((NCUpdateResult) -> Void)? = nil) {
         provider.request(.getMeals) { response in
-            defer { self.progressIndicator.stopAnimation(self) }
-            
             switch response {
             case .failure(let error):
                 print(error.localizedDescription)
@@ -100,19 +85,19 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
         }
     }
     
+    /// Display today's menu or an error message if it cannot be displayed
     func updateView(_ result: NCUpdateResult) {
         listViewController.contents = {
-            switch result {
-            case .failed: return ["⁉️  Ein Fehler ist aufgetreten."]
-            case .noData: return ["∅  Keine Einträge vorhanden."]
-            case .newData:
-                guard let mealMenu = mealMenu else {
-                    return ["⁉️  Ein Fehler ist aufgetreten."]
-                }
-                guard !mealMenu.today.isEmpty else {
-                    return ["👨🏻‍🍳  Keine Enträge für heute."]
-                }
-                return mealMenu.today
+            switch (result, mealMenu) {
+            case (.noData, nil):
+                return ["∅  Keine Einträge vorhanden."]
+            case (.failed, nil),
+                 (.newData, nil):
+                return ["⁉️  Ein Fehler ist aufgetreten."]
+            case let (.newData, menu?) where menu.today.isEmpty:
+                return ["👨🏻‍🍳  Keine Enträge für heute."]
+            case let (_, menu?):
+                return  menu.today
             }
         }()
     }
