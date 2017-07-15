@@ -38,6 +38,11 @@ class PopoverViewController: FLOPageViewController {
         reloadData()
     }
     
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        reloadData(clearsOldDataOnStart: false)
+    }
+    
     
     // MARK: - Actions
     
@@ -60,19 +65,23 @@ class PopoverViewController: FLOPageViewController {
     
     // MARK: - Networking
     
-    func reloadData() {
-        progressIndicator.startAnimation(self)
-        updateStatusLabel(contentState: nil)
+    func reloadData(clearsOldDataOnStart isClearing: Bool = true) {
+        if isClearing {
+            progressIndicator.startAnimation(self)
+            updateStatusLabel(contentState: nil)
+        }
         clickGestureRecognizer.isEnabled = false
 
         fetchMenu() { result in
-            self.progressIndicator.stopAnimation(self)
-            self.updateStatusLabel(contentState: result)
-            self.updateContentView()
-            self.setupTableViewControllers()
+            if isClearing || result == .newData {
+                self.progressIndicator.stopAnimation(self)
+                self.updateStatusLabel(contentState: result)
+            }
             if result != .newData { // enable reload only if data is invalid
                 self.clickGestureRecognizer.isEnabled = true
             }
+            self.updateContainerView()
+            self.setupTableViewControllers()
         }
     }
     
@@ -118,7 +127,7 @@ class PopoverViewController: FLOPageViewController {
         }
     }
     
-    private func updateContentView() {
+    private func updateContainerView() {
         updateTitleLabel()
         updateNavigationButtons()
     }
@@ -169,7 +178,7 @@ class PopoverViewController: FLOPageViewController {
     
     override func pageController(_ pageController: NSPageController, didTransitionTo object: Any) {
         super.pageController(pageController, didTransitionTo: object)
-        updateContentView()
+        updateContainerView()
     }
     
 
