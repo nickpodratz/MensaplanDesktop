@@ -91,8 +91,9 @@ class TodayViewController: NSViewController, NCWidgetProviding, NCWidgetListView
             switch (result, mealMenu) {
             case (.noData, nil):
                 return ["∅  Keine Einträge vorhanden."]
-            case (.failed, nil),
-                 (.newData, nil):
+            case (.failed, nil):
+                 return ["🔌  Keine Verbindung zum Internet."]
+            case (.newData, nil):
                 return ["⁉️  Ein Fehler ist aufgetreten."]
             case let (.newData, menu?) where menu.today.isEmpty:
                 return ["👨🏻‍🍳  Keine Enträge für heute."]
