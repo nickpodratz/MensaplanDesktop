@@ -44,7 +44,7 @@
 		639A786C1EED456100F839EE /* PlaceholderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639A786B1EED456100F839EE /* PlaceholderViewController.swift */; };
 		63B50D961EF0A13600526CF1 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B50D951EF0A13600526CF1 /* Menu.swift */; };
 		63B50D971EF0A13600526CF1 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B50D951EF0A13600526CF1 /* Menu.swift */; };
-		63EFC1DF1EF7B03700D1741E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFC1DE1EF7B03700D1741E /* PopoverViewController.swift */; };
+		63EFC1DF1EF7B03700D1741E /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFC1DE1EF7B03700D1741E /* PageViewController.swift */; };
 		63EFC1E11EF7B61700D1741E /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFC1E01EF7B61700D1741E /* EventMonitor.swift */; };
 		63EFC1E31EF7CFAB00D1741E /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFC1E21EF7CFAB00D1741E /* MealCell.swift */; };
 		63EFC1E41EF7CFAB00D1741E /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFC1E21EF7CFAB00D1741E /* MealCell.swift */; };
@@ -120,7 +120,7 @@
 		639A78691EED42FA00F839EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PlaceholderViewController.xib; sourceTree = "<group>"; };
 		639A786B1EED456100F839EE /* PlaceholderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderViewController.swift; path = Controllers/PlaceholderViewController.swift; sourceTree = "<group>"; };
 		63B50D951EF0A13600526CF1 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu.swift; path = Models/Menu.swift; sourceTree = "<group>"; };
-		63EFC1DE1EF7B03700D1741E /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopoverViewController.swift; path = Controllers/PopoverViewController.swift; sourceTree = "<group>"; };
+		63EFC1DE1EF7B03700D1741E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = Controllers/PageViewController.swift; sourceTree = "<group>"; };
 		63EFC1E01EF7B61700D1741E /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Controllers/EventMonitor.swift; sourceTree = "<group>"; };
 		63EFC1E21EF7CFAB00D1741E /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealCell.swift; path = Views/MealCell.swift; sourceTree = "<group>"; };
 		74BB995FAE27CA369B624780 /* Pods-MensaplanDesktop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MensaplanDesktop.release.xcconfig"; path = "Pods/Target Support Files/Pods-MensaplanDesktop/Pods-MensaplanDesktop.release.xcconfig"; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 				63EFC1E01EF7B61700D1741E /* EventMonitor.swift */,
 				63899F441EEBFF0100709E34 /* Main.storyboard */,
 				638930BC1EFA7AD1002521AE /* FLOPageViewController.swift */,
-				63EFC1DE1EF7B03700D1741E /* PopoverViewController.swift */,
+				63EFC1DE1EF7B03700D1741E /* PageViewController.swift */,
 				638930C21EFA7E02002521AE /* MenuViewController.swift */,
 			);
 			name = Controllers;
@@ -600,7 +600,7 @@
 				638930C31EFA7E02002521AE /* MenuViewController.swift in Sources */,
 				63899F831EEC02B200709E34 /* File.swift in Sources */,
 				63899F911EEC05D800709E34 /* Date+.swift in Sources */,
-				63EFC1DF1EF7B03700D1741E /* PopoverViewController.swift in Sources */,
+				63EFC1DF1EF7B03700D1741E /* PageViewController.swift in Sources */,
 				638930C01EFA7ADF002521AE /* FLOArrowControl.swift in Sources */,
 				63899F3F1EEBFF0100709E34 /* AppDelegate.swift in Sources */,
 				638930BD1EFA7AD1002521AE /* FLOPageViewController.swift in Sources */,

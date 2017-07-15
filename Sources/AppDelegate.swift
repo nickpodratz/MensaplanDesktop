@@ -34,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.action = #selector(togglePopover)
         }
         
-        popover.contentViewController = NSStoryboard.init(name: "Main", bundle: nil).instantiateController(withIdentifier: "PopoverViewController") as! PopoverViewController
+        popover.contentViewController = NSStoryboard.init(name: "Main", bundle: nil).instantiateController(withIdentifier: "PageViewController") as! PageViewController
         
         // Hides VC on press outside of view
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown]) { [unowned self] event in

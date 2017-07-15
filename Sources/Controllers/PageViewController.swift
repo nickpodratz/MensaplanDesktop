@@ -1,5 +1,5 @@
 //
-//  PopoverViewController.swift
+//  PageViewController.swift
 //  MensaplanDesktop
 //
 //  Created by Nick Podratz on 19.06.17.
@@ -10,7 +10,7 @@ import Cocoa
 import NotificationCenter
 import Moya
 
-class PopoverViewController: FLOPageViewController {
+class PageViewController: FLOPageViewController {
     
     @IBOutlet weak var quitNavigationButton: NSButton!
     @IBOutlet weak var leftNavigationButton: NSButton!
