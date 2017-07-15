@@ -138,10 +138,11 @@ class PopoverViewController: FLOPageViewController {
 
         titleLabel.stringValue = {
             switch date {
-            case let date? where Calendar.current.isDateInToday(date):    return "Heute"
-            case let date? where Calendar.current.isDateInTomorrow(date): return "Morgen"
-            case let date?:                                               return date.germanWeekdayFormatted
-            default:                                                      return "Mensaplan"
+            case let date? where Calendar.current.isDateInYesterday(date):  return "Gestern"
+            case let date? where Calendar.current.isDateInToday(date):      return "Heute"
+            case let date? where Calendar.current.isDateInTomorrow(date):   return "Morgen"
+            case let date?:                                                 return date.germanWeekdayFormatted
+            default:                                                        return "Mensaplan"
             }
         }()
     }
