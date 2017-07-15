@@ -1,6 +1,6 @@
 //
 //  ListRowViewController.swift
-//  MensaplanTodayExtension
+//  MensaplanDesktopTodayExtension
 //
 //  Created by Nick Podratz on 10.06.17.
 //  Copyright © 2017 Nick Podratz. All rights reserved.

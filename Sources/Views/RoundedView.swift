@@ -1,6 +1,6 @@
 //
 //  RoundedView.swift
-//  Connect
+//  MensaplanDesktop
 //
 //  Created by Nick Podratz on 21.12.15.
 //  Copyright © 2015 Nick Podratz. All rights reserved.

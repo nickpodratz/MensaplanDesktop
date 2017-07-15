@@ -1,6 +1,6 @@
 //
 //  BadgeTextField.swift
-//  Tapasi
+//  MensaplanDesktop
 //
 //  Created by Nick Podratz on 11.08.16.
 //  Copyright © 2016 Nick Podratz. All rights reserved.

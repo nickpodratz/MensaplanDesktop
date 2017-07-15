@@ -1,9 +1,9 @@
 //
 //  Meal.swift
-//  HPI-Mobile
+//  MensaplanDesktop
 //
 //  Created by Nick Podratz on 12.12.16.
-//  Copyright © 2016 HPI Mobile Developer Klub. All rights reserved.
+//  Copyright © 2016 Nick Podratz. All rights reserved.
 //
 
 import Moya

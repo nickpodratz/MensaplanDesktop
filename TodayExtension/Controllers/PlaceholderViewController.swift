@@ -1,6 +1,6 @@
 //
 //  PlaceholderViewController.swift
-//  MensaplanDesktop
+//  MensaplanDesktopTodayExtension
 //
 //  Created by Nick Podratz on 11.06.17.
 //  Copyright © 2017 Nick Podratz. All rights reserved.
