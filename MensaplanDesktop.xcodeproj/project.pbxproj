@@ -120,6 +120,7 @@
 		639A78691EED42FA00F839EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PlaceholderViewController.xib; sourceTree = "<group>"; };
 		639A786B1EED456100F839EE /* PlaceholderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceholderViewController.swift; path = Controllers/PlaceholderViewController.swift; sourceTree = "<group>"; };
 		63B50D951EF0A13600526CF1 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu.swift; path = Models/Menu.swift; sourceTree = "<group>"; };
+		63DACFDC1F1B719700EAFFAE /* MensaplanDesktop.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MensaplanDesktop.entitlements; sourceTree = "<group>"; };
 		63EFC1DE1EF7B03700D1741E /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PageViewController.swift; path = Controllers/PageViewController.swift; sourceTree = "<group>"; };
 		63EFC1E01EF7B61700D1741E /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Controllers/EventMonitor.swift; sourceTree = "<group>"; };
 		63EFC1E21EF7CFAB00D1741E /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealCell.swift; path = Views/MealCell.swift; sourceTree = "<group>"; };
@@ -217,6 +218,7 @@
 				630A2F781EF0531D008DA8E7 /* Controllers */,
 				63899F8D1EEC02C900709E34 /* Services */,
 				63899F931EEC05E300709E34 /* Extensions */,
+				63DACFDC1F1B719700EAFFAE /* MensaplanDesktop.entitlements */,
 				63899F471EEBFF0100709E34 /* Info.plist */,
 			);
 			path = Sources;
@@ -395,6 +397,11 @@
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = P345AM94MQ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					63899F4B1EEBFF0100709E34 = {
 						CreatedOnToolsVersion = 8.3.1;
@@ -793,6 +800,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/MensaplanDesktop.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = P345AM94MQ;
@@ -811,6 +819,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/MensaplanDesktop.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = P345AM94MQ;
